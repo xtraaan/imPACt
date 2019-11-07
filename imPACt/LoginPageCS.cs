@@ -1,7 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 
-namespace LoginNavigation
+namespace imPACt
 {
 	public class LoginPageCS : ContentPage
 	{
