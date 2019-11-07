@@ -49,8 +49,8 @@ namespace imPACt
 				Email = emailEntry.Text
 			};
 
-			// Sign up logic goes here
 
+			// Sign up logic goes here
 			var signUpSucceeded = AreDetailsValid (user);
 			if (signUpSucceeded) {
 				var rootPage = Navigation.NavigationStack.FirstOrDefault ();
@@ -66,7 +66,7 @@ namespace imPACt
 
 		bool AreDetailsValid (User user)
 		{
-			return (!string.IsNullOrWhiteSpace (user.Username) && !string.IsNullOrWhiteSpace (user.Password) && !string.IsNullOrWhiteSpace (user.Email) && user.Email.Contains ("@"));
+			return (!string.IsNullOrWhiteSpace (user.Username) && !string.IsNullOrWhiteSpace (user.Password) && !string.IsNullOrWhiteSpace (user.Email) && user.Email.Contains ("@") && user.Email.Contains(".edu"));
 		}
 	}
 }
