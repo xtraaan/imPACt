@@ -17,5 +17,11 @@ namespace imPACt
         {
             InitializeComponent();
         }
+        async void OnLogoutButtonClicked(object sender, EventArgs e)
+        {
+            App.IsUserLoggedIn = false;
+            Navigation.InsertPageBefore(new LoginPage(), this);
+            await Navigation.PopAsync();
+        }
     }
 }
