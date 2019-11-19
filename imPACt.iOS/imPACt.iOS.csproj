@@ -133,7 +133,4 @@
       <Name>imPACt</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Profile.jpg" />
-  </ItemGroup>
 </Project>
