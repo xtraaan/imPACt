@@ -10,7 +10,7 @@ namespace imPACt
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new ProfilePage();
         }
 
         protected override void OnStart()
