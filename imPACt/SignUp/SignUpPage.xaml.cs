@@ -1,4 +1,5 @@
-﻿using System;
+﻿using imPACt.Login;
+using System;
 using System.Linq;
 using Xamarin.Forms;
 
@@ -27,9 +28,10 @@ namespace imPACt
 				var rootPage = Navigation.NavigationStack.FirstOrDefault ();
 				if (rootPage != null) {
 					App.IsUserLoggedIn = true;
-					Navigation.InsertPageBefore (new MainPage (), Navigation.NavigationStack.First ());
-					await Navigation.PopToRootAsync ();
-				}
+                    //	Navigation.InsertPageBefore (new MainPage (), Navigation.NavigationStack.First ());
+                    //await Navigation.PopToRootAsync ();
+                    await Navigation.PushAsync(new SignUpInfo());
+                }
 			} else {
 				messageLabel.Text = "Sign up failed";
 			}
