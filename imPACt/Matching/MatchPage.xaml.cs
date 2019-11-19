@@ -7,22 +7,14 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace imPACt.Login
+namespace imPACt.Matching
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Attribute : ContentPage
+    public partial class MatchPage : ContentPage
     {
-        public Attribute()
+        public MatchPage()
         {
             InitializeComponent();
         }
     }
 }
-
-/*
-    Attributes:
-        Classification,
-        Major,
-        Research,
-        School
-*/

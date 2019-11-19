@@ -7,5 +7,9 @@
 		public string Password { get; set; }
 
 		public string Email { get; set; }
+
+        public string Major { get; set; }
+
+        
 	}
 }
