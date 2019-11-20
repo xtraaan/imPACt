@@ -14,4 +14,7 @@
   <ItemGroup>
     <EmbeddedResource Remove="Login\Attribute.xaml" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tables\" />
+  </ItemGroup>
 </Project>
