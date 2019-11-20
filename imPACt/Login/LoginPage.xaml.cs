@@ -3,20 +3,23 @@ using System.IO;
 using imPACt.Tables;
 using SQLite;
 using Xamarin.Forms;
+using imPACt.Tables;
+using SQLite;
+using System.IO;
 
 namespace imPACt
 {
-    public partial class LoginPage : ContentPage
-    {
-        public LoginPage()
-        {
-            InitializeComponent();
-        }
+	public partial class LoginPage : ContentPage
+	{
+		public LoginPage ()
+		{
+			InitializeComponent ();
+		}
 
-        async void OnSignUpButtonClicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new SignUpPage());
-        }
+		async void OnSignUpButtonClicked (object sender, EventArgs e)
+		{
+			await Navigation.PushAsync (new SignUpPage ());
+		}
 
         void OnLoginButtonClicked(object sender, EventArgs e)
         {
@@ -30,6 +33,8 @@ namespace imPACt
             {
                 Application.Current.MainPage = new NavigationPage(new MainPage());
             }
+
+            //logic needs to be fixed because app crashes if its incorrect
             else
             {
                 Device.BeginInvokeOnMainThread(async () =>
@@ -40,28 +45,35 @@ namespace imPACt
                         passwordEntry.Text = string.Empty;
                     }
                 });
+
+
+
+
+
+
+
+
+                /*	var user = new User {
+                        Username = usernameEntry.Text,
+                        Password = passwordEntry.Text
+                    };
+
+                    var isValid = AreCredentialsCorrect (user);
+                    if (isValid) {
+                        App.IsUserLoggedIn = true;
+                        Navigation.InsertPageBefore (new MainPage (), this);
+                        await Navigation.PopAsync ();
+                    } else {
+                        messageLabel.Text = "Login failed";
+                        passwordEntry.Text = string.Empty;
+                    }*/
+
             }
-
-
-            //         var user = new User {
-            //	Username = usernameEntry.Text,
-            //	Password = passwordEntry.Text
-            //};
-
-            //var isValid = AreCredentialsCorrect (user);
-            //if (isValid) {
-            //	App.IsUserLoggedIn = true;
-            //	Navigation.InsertPageBefore (new MainPage (), this);
-            //	await Navigation.PopAsync ();
-            //} else {
-            //	messageLabel.Text = "Login failed";
-            //	passwordEntry.Text = string.Empty;
-            //}
         }
 
-        bool AreCredentialsCorrect(User user)
-        {
-            return user.Username == Constants.Username && user.Password == Constants.Password;
-        }
-    }
+		bool AreCredentialsCorrect (User user)
+		{
+			return user.Username == Constants.Username && user.Password == Constants.Password;
+		}
+	}
 }
