@@ -30,6 +30,8 @@ namespace imPACt
             {
                 Application.Current.MainPage = new NavigationPage(new MainPage());
             }
+
+            //logic needs to be fixed because app crashes if its incorrect
             else
             {
                 Device.BeginInvokeOnMainThread(async () =>
