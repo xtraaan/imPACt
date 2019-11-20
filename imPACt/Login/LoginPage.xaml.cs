@@ -1,5 +1,8 @@
 ﻿using System;
 using Xamarin.Forms;
+using imPACt.Tables;
+using SQLite;
+using System.IO;
 
 namespace imPACt
 {
@@ -15,23 +18,53 @@ namespace imPACt
 			await Navigation.PushAsync (new SignUpPage ());
 		}
 
-		async void OnLoginButtonClicked (object sender, EventArgs e)
-		{
-			var user = new User {
-				Username = usernameEntry.Text,
-				Password = passwordEntry.Text
-			};
+        void OnLoginButtonClicked(object sender, EventArgs e)
+        {
 
-			var isValid = AreCredentialsCorrect (user);
-			if (isValid) {
-				App.IsUserLoggedIn = true;
-				Navigation.InsertPageBefore (new MainPage (), this);
-				await Navigation.PopAsync ();
-			} else {
-				messageLabel.Text = "Login failed";
-				passwordEntry.Text = string.Empty;
-			}
-		}
+            var dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UserDatabase.db");
+            var db = new SQLiteConnection(dbpath);
+
+            var myquery = db.Table<RegisterUserTable>().Where(u => u.Username.Equals(usernameEntry.Text) && u.Password.Equals(passwordEntry.Text)).FirstOrDefault();
+
+            if (myquery != null)
+            {
+                Application.Current.MainPage = new NavigationPage(new MainPage());
+            }
+            else
+            {
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+                    var result = await this.DisplayAlert("Error", "Failed Username and Password", "Okay", "Cancel");
+                    if (result)
+                    {
+                        passwordEntry.Text = string.Empty;
+                    }
+                });
+
+
+
+
+
+
+
+
+                /*	var user = new User {
+                        Username = usernameEntry.Text,
+                        Password = passwordEntry.Text
+                    };
+
+                    var isValid = AreCredentialsCorrect (user);
+                    if (isValid) {
+                        App.IsUserLoggedIn = true;
+                        Navigation.InsertPageBefore (new MainPage (), this);
+                        await Navigation.PopAsync ();
+                    } else {
+                        messageLabel.Text = "Login failed";
+                        passwordEntry.Text = string.Empty;
+                    }*/
+
+            }
+        }
 
 		bool AreCredentialsCorrect (User user)
 		{

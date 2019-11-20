@@ -1,45 +1,56 @@
 ﻿using imPACt.Login;
 using System;
 using System.Linq;
+using imPACt.Tables;
+using SQLite;
 using Xamarin.Forms;
+using System.IO;
 
 namespace imPACt
 
 {
-	public partial class SignUpPage : ContentPage
-	{
+    public partial class SignUpPage : ContentPage
+    {
         public SignUpPage()
-		{
-			InitializeComponent ();
-		}
+        {
+            InitializeComponent();
+        }
 
-		async void OnSignUpButtonClicked (object sender, EventArgs e)
-		{
-			var user = new User () {
-				Username = usernameEntry.Text,
-				Password = passwordEntry.Text,
-				Email = emailEntry.Text
-			};
+        async void OnSignUpButtonClicked(object sender, EventArgs e)
+        {
 
-			// Sign up logic goes here
+            var dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UserDatabase.db");
+            var db = new SQLiteConnection(dbpath);
+            db.CreateTable<RegisterUserTable>();
 
-			var signUpSucceeded = AreDetailsValid (user);
-			if (signUpSucceeded) {
-				var rootPage = Navigation.NavigationStack.FirstOrDefault ();
-				if (rootPage != null) {
-					App.IsUserLoggedIn = true;
-                    //	Navigation.InsertPageBefore (new MainPage (), Navigation.NavigationStack.First ());
-                    //await Navigation.PopToRootAsync ();
-                    await Navigation.PushAsync(new SignUpInfo());
+            var user = new RegisterUserTable()
+            {
+                Username = usernameEntry.Text,
+                Password = passwordEntry.Text,
+                Email = emailEntry.Text
+            };
+
+
+
+            if (!string.IsNullOrWhiteSpace(user.Username) && !string.IsNullOrWhiteSpace(user.Password) && !string.IsNullOrWhiteSpace(user.Email) && user.Email.Contains("@"))
+            {
+                db.Insert(user);
+                var rootPage = Navigation.NavigationStack.FirstOrDefault();
+                if (rootPage != null)
+                {
+                    App.IsUserLoggedIn = true;
+                    Navigation.InsertPageBefore(new SignUpInfo(), Navigation.NavigationStack.First());
+                    await Navigation.PopToRootAsync();
                 }
-			} else {
-				messageLabel.Text = "Sign up failed";
-			}
-		}
+                else
+                {
+                    messageLabel.Text = "Sign up failed";
+                }
 
-		bool AreDetailsValid (User user)
-		{
-			return (!string.IsNullOrWhiteSpace (user.Username) && !string.IsNullOrWhiteSpace (user.Password) && !string.IsNullOrWhiteSpace (user.Email) && user.Email.Contains ("@"));
-		}
-	}
+
+            }
+
+
+        }
+    }
 }
