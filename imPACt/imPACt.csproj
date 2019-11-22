@@ -19,10 +19,4 @@
     <Folder Include="Tables\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Compile Remove="MainPageCS.cs" />
-    <Compile Remove="SignUp\SignUpPageCS.cs" />
-    <Compile Remove="SignUp\SignUpInfoCS.cs" />
-    <Compile Remove="Login\LoginPageCS.cs" />
-  </ItemGroup>
 </Project>
