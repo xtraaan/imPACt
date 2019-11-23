@@ -32,7 +32,9 @@ namespace imPACt
 
 
 
-            if (!string.IsNullOrWhiteSpace(user.Username) && !string.IsNullOrWhiteSpace(user.Password) && !string.IsNullOrWhiteSpace(user.Email) && user.Email.Contains("@"))
+            if (!string.IsNullOrWhiteSpace(user.Username) 
+                && !string.IsNullOrWhiteSpace(user.Password)
+                && IsValidEmail(user.Email))
             {
                 db.Insert(user);
                 var rootPage = Navigation.NavigationStack.FirstOrDefault();
@@ -42,15 +44,28 @@ namespace imPACt
                     Navigation.InsertPageBefore(new SignUpInfo(), Navigation.NavigationStack.First());
                     await Navigation.PopToRootAsync();
                 }
-                else
-                {
-                    messageLabel.Text = "Sign up failed";
-                }
+                
 
 
             }
+            else
+            {
+                messageLabel.Text = "Sign up failed";
+            }
 
 
+        }
+        bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }
