@@ -8,8 +8,11 @@ namespace imPACt
 {
 	public partial class LoginPage : ContentPage
 	{
+       
 		public LoginPage ()
 		{
+            
+
 			InitializeComponent ();
 		}
 
@@ -18,14 +21,14 @@ namespace imPACt
 			await Navigation.PushAsync (new SignUpPage ());
 		}
 
-        void OnLoginButtonClicked(object sender, EventArgs e)
+         async void  OnLoginButtonClicked(object sender, EventArgs e)
         {
 
-            var dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UserDatabase.db");
-            var db = new SQLiteConnection(dbpath);
-
-            var myquery = db.Table<RegisterUserTable>().Where(u => u.Username.Equals(usernameEntry.Text) && u.Password.Equals(passwordEntry.Text)).FirstOrDefault();
-
+            //Checking if the username and password exists
+            var myquery = await App.Database.QueryUserAsync(usernameEntry.Text, passwordEntry.Text);
+            //await DisplayAlert("User", myquery.ToString(), "Ok");
+            
+            //If query is not null that means user exists
             if (myquery != null)
             {
                 Application.Current.MainPage = new NavigationPage(new MainPage());
@@ -42,35 +45,7 @@ namespace imPACt
                         passwordEntry.Text = string.Empty;
                     }
                 });
-
-
-
-
-
-
-
-
-                /*	var user = new User {
-                        Username = usernameEntry.Text,
-                        Password = passwordEntry.Text
-                    };
-
-                    var isValid = AreCredentialsCorrect (user);
-                    if (isValid) {
-                        App.IsUserLoggedIn = true;
-                        Navigation.InsertPageBefore (new MainPage (), this);
-                        await Navigation.PopAsync ();
-                    } else {
-                        messageLabel.Text = "Login failed";
-                        passwordEntry.Text = string.Empty;
-                    }*/
-
             }
         }
-
-		bool AreCredentialsCorrect (User user)
-		{
-			return user.Username == Constants.Username && user.Password == Constants.Password;
-		}
 	}
 }

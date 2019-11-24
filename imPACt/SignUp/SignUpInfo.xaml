@@ -18,7 +18,12 @@
                 <Picker.Items>
                 </Picker.Items>
             </Picker>
-            
+
+            <Picker x:Name="Year" Title="Year Classification" SelectedIndexChanged="Year_SelectedIndexChanged">
+                <Picker.Items>
+                </Picker.Items>
+            </Picker>
+
 
             <Button Text="Sign Up" Clicked="OnSignUpInfoClicked" />
             

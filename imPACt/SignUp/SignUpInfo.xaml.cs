@@ -1,95 +1,150 @@
-﻿using System;
+﻿using imPACt.Tables;
+using SQLite;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using imPACt;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace imPACt.Login
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
+    
+
     public partial class SignUpInfo : ContentPage
     {
-        
-        public class MajorsMethod
-        {
-            public string MajorSel { get; set; }
-            
-        }
-        public class ResearchMethod
-        {
-            public string ResearchSel { get; set; }
-
-        }
 
 
+        // private SQLiteAsyncConnection _connection;
+        public RegisterUserTable NewUser;
 
-        public SignUpInfo()
+        public SignUpInfo(RegisterUserTable Newuser)
         {
             InitializeComponent();
+
+            // _connection = DependencyService.Get<ISQLiteDb>().GetConnection();
+            NewUser = Newuser;
+
 
             foreach (var method in GetMajorMethod())
                 Major.Items.Add(method.MajorSel);
             foreach (var method in GetResearchMethod())
                 ResearchInterests.Items.Add(method.ResearchSel);
+            foreach (var method in GetSelectionMethod())
+                Year.Items.Add(method.YearSel);
+            
         }
 
 
         
-        private void Picker_SelectedIndexChanged(object sender, EventArgs e)
+        private  void Picker_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var Maj = Major.Items[Major.SelectedIndex];
             
-            DisplayAlert("Selection", Maj, "Ok");
+            NewUser.Major = Major.Items[Major.SelectedIndex];
+            
+            //DisplayAlert("Selection", Maj, "Ok");
             
         }
-        private void ResearchInterests_SelectedIndexChanged(object sender, EventArgs e)
+        private  void ResearchInterests_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var Res = ResearchInterests.Items[ResearchInterests.SelectedIndex];
+            NewUser.ResearchInterest = ResearchInterests.Items[ResearchInterests.SelectedIndex];
+            
+           // DisplayAlert("Selection", Res, "Ok");
+        }
 
-            DisplayAlert("Selection", Res, "Ok");
+        private  void Year_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            NewUser.Year = Year.Items[Year.SelectedIndex];
+        //    DisplayAlert("Selection", Yr, "Ok");
+
         }
 
         async void OnSignUpInfoClicked(object sender, EventArgs e)
         {
-           //NEEDS MORE TO CHECK ALL FIELDS ARE FILLED AND VALID
+
+
+            //await App._connection;
+            //  var dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UserDatabase.db");
+            // var db = new SQLiteConnection(dbpath);
+            // db.CreateTable<RegisterUserTable>();
+
+
+
+            await App.Database.SaveUserAsync(NewUser);
+            
+
+            App.currentUser = await App.Database.GetUserAsync(NewUser.UserId);
+
+            string mystring = $"{App.currentUser.UserId}\n{App.currentUser.Username}\n{App.currentUser.Email}\n" +
+                $"{App.currentUser.Password}\n{App.currentUser.Major}\n{App.currentUser.Year}\n{App.currentUser.ResearchInterest}";
+                await DisplayAlert("user", mystring, "Ok");
+
+            //NEEDS MORE TO CHECK ALL FIELDS ARE FILLED AND VALID
             var rootPage = Navigation.NavigationStack.FirstOrDefault();
             if (rootPage != null)
             {
+                App.IsUserLoggedIn = true;
                 Navigation.InsertPageBefore(new MainPage(), Navigation.NavigationStack.First());
                 await Navigation.PopToRootAsync();
             }
         }
 
-        //List of Majors Added to the list
-        private IList<MajorsMethod> GetMajorMethod()
-        {
-            return new List<MajorsMethod>{
-                new MajorsMethod { MajorSel = "Computer Science"},
-                new MajorsMethod { MajorSel = "Art"},
-                new MajorsMethod { MajorSel = "Math"},
-                new MajorsMethod { MajorSel = "English"},
-                
 
+        /*-----------------------------------------------------------------------------------*/
+
+        public class Majors {
+            public string MajorSel { get; set; }
+        }
+
+        public class Research
+        {
+            public string ResearchSel { get; set; }
+        }
+        public class Years
+        {
+            public string YearSel { get; set; }
+        }
+
+
+        //List of Majors Added to the list
+        private IList<Majors> GetMajorMethod()
+        {
+            return new List<Majors>{
+                new Majors { MajorSel = "Computer Science"},
+                new Majors { MajorSel = "Art"},
+                new Majors { MajorSel = "Math"},
+                new Majors { MajorSel = "English"},
             };
            
         }
 
-        private IList<ResearchMethod> GetResearchMethod()
+        private IList<Research> GetResearchMethod()
         {
-            return new List<ResearchMethod>{
-                new ResearchMethod { ResearchSel = "Artificial Intelligence"},
-                new ResearchMethod { ResearchSel = "Machine Learning"},
-                new ResearchMethod { ResearchSel = "Game Design"},
-                new ResearchMethod { ResearchSel = "That one thing"},
-
-
+            return new List<Research>
+            {
+                new Research { ResearchSel = "Artificial Intelligence"},
+                new Research { ResearchSel = "Machine Learning"},
+                new Research { ResearchSel = "Game Design"},
+                new Research { ResearchSel = "That one thing"},
             };
-
         }
 
-
+        private IList<Years> GetSelectionMethod()
+        {
+            return new List<Years>
+            {
+                new Years { YearSel = "Freshman"},
+                new Years { YearSel = "Sophmore"},
+                new Years { YearSel = "Junior"},
+                new Years { YearSel = "Senior"},
+                new Years { YearSel = "Graduate"},
+                new Years { YearSel = "Ph.d"},
+                new Years { YearSel = "Professor"},
+            };
+        }
     }
 }

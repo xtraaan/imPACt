@@ -5,6 +5,7 @@ using imPACt.Tables;
 using SQLite;
 using Xamarin.Forms;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace imPACt
 
@@ -16,41 +17,49 @@ namespace imPACt
             InitializeComponent();
         }
 
-        async void OnSignUpButtonClicked(object sender, EventArgs e)
+        //Uncomment if using the ListView
+        /*protected override async void OnAppearing()
         {
+            base.OnAppearing();
+            listView.ItemsSource = await App.Database.GetUsersAsync();
+        }*/
 
-            var dbpath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "UserDatabase.db");
-            var db = new SQLiteConnection(dbpath);
-            db.CreateTable<RegisterUserTable>();
+        private async void OnSignUpButtonClicked(object sender, EventArgs e)
+        {
+            //checking if it is a real email and is a .edu email
+            Regex regex = new Regex(@"^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.(edu)$", RegexOptions.IgnoreCase);
 
-            var user = new RegisterUserTable()
+            //Check if content is filled in correctly
+            if (!string.IsNullOrWhiteSpace(usernameEntry.Text) 
+                && !string.IsNullOrWhiteSpace(passwordEntry.Text)
+                && regex.IsMatch(emailEntry.Text))
             {
-                Username = usernameEntry.Text,
-                Password = passwordEntry.Text,
-                Email = emailEntry.Text
-            };
+                //data for filling new user signup
+                var newUser = new RegisterUserTable
+                {
+                    Username = usernameEntry.Text,
+                    Password = passwordEntry.Text,
+                    Email = emailEntry.Text
+                };
+
+             
+
+                /*listView.ItemsSource = await App.Database.GetUsersAsync();*/
+                /*string mystring = $"{App.currentUser.UserId}\n{App.currentUser.Username}\n{App.currentUser.Email}\n{App.currentUser.Password}";
+                await DisplayAlert("user", mystring, "Ok");*/
 
 
-
-            if (!string.IsNullOrWhiteSpace(user.Username) 
-                && !string.IsNullOrWhiteSpace(user.Password)
-                && IsValidEmail(user.Email))
-            {
-                db.Insert(user);
                 var rootPage = Navigation.NavigationStack.FirstOrDefault();
                 if (rootPage != null)
                 {
                     App.IsUserLoggedIn = true;
-                    Navigation.InsertPageBefore(new SignUpInfo(), Navigation.NavigationStack.First());
-                    await Navigation.PopToRootAsync();
+                    //Pass in user so it can be updated and created in database
+                    await Navigation.PushAsync(new SignUpInfo(newUser)); 
                 }
-                
-
-
             }
             else
             {
-                messageLabel.Text = "Sign up failed";
+                await DisplayAlert("Error", "Sign up failed", "OK");
             }
 
 
