@@ -12,7 +12,18 @@
 			<Label Text="Email address" />
 			<Entry x:Name="emailEntry" />
 			<Button Text="Next" Clicked="OnSignUpButtonClicked" />
-			<Label x:Name="messageLabel" />
+
+            <!--<ListView x:Name="listView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding UserId}"
+                                  Detail="{Binding Email}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
+            
+            
+			
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>
