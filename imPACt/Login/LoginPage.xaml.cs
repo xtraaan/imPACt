@@ -3,9 +3,7 @@ using System.IO;
 using imPACt.Tables;
 using SQLite;
 using Xamarin.Forms;
-using imPACt.Tables;
-using SQLite;
-using System.IO;
+
 
 namespace imPACt
 {
@@ -34,6 +32,8 @@ namespace imPACt
             //If query is not null that means user exists
             if (myquery != null)
             {
+                App.currentUser = myquery;
+           //     await DisplayAlert("user", App.currentUser.UserId.ToString(), "Ok");
                 Application.Current.MainPage = new NavigationPage(new MainPage());
             }
 

@@ -5,11 +5,17 @@
 			 Title="Sign Up">
 	<ContentPage.Content>
 		<StackLayout VerticalOptions="StartAndExpand">
-			<Label Text="Username" />
+            <Label Text="First Name" />
+            <Entry x:Name="FirstnameEntry" Placeholder="First Name " />
+            <Label Text="Last Name" />
+            <Entry x:Name="LastnameEntry" Placeholder="Last Name" />
+            <Label Text="Username" />
 			<Entry x:Name="usernameEntry" Placeholder="username" />
 			<Label Text="Password" />
 			<Entry x:Name="passwordEntry" IsPassword="true" />
-			<Label Text="Email address" />
+            <Label Text="Re-Enter Password" />
+            <Entry x:Name="RepasswordEntry" IsPassword="true" />
+            <Label Text="Email address" />
 			<Entry x:Name="emailEntry" />
 			<Button Text="Next" Clicked="OnSignUpButtonClicked" />
 
