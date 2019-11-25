@@ -8,5 +8,34 @@
 
     <ContentPage.Content/>
 
+    <StackLayout VerticalOptions="StartAndExpand">
+        <ListView x:Name="listView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+
+                        <Grid Padding="15,0,15,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label x:Name="FullName" Text="{Binding FullName}" Grid.Row="0" Grid.Column="0" TranslationY="2" />
+                            <Label x:Name="Email" Text="{Binding Email}" Grid.Row="1" Grid.Column="0" FontSize="Small" TextColor="Accent" TranslationY="-5" />
+                            <Label x:Name="Year" Text="{Binding Year}" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" VerticalOptions="Center" TextColor="Accent" />
+                            <Button x:Name="Connect" Text="Connect" Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" VerticalOptions="Center" TextColor="Black" BackgroundColor="LightGreen" BorderRadius="8" HorizontalOptions="EndAndExpand" Padding="4" Margin="2"/>
+                        </Grid>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
 
 </ContentPage>

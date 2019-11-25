@@ -16,5 +16,16 @@ namespace imPACt.Matching
         {
             InitializeComponent();
         }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            listView.ItemsSource = await App.Database.GetUsersAsync();
+        }
+
+        private async void OnCreate(object sender)
+        {
+            listView.ItemsSource = await App.Database.GetUsersAsync();
+        }
     }
 }
