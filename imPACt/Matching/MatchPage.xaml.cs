@@ -22,10 +22,5 @@ namespace imPACt.Matching
             base.OnAppearing();
             listView.ItemsSource = await App.Database.GetUsersAsync();
         }
-
-        private async void OnCreate(object sender)
-        {
-            listView.ItemsSource = await App.Database.GetUsersAsync();
-        }
     }
 }
