@@ -35,11 +35,18 @@
                        AbsoluteLayout.LayoutBounds=".5,140,1,40" 
                        AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
 
-                <Entry Text="Bio" 
+                <Button Text="Connect" 
+                        FontAttributes="Bold"
+                        BackgroundColor="GhostWhite"
+                        TextColor="DarkOliveGreen"
+                        AbsoluteLayout.LayoutBounds=".5,180,1,40"
+                        AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
+
+                <!--<Entry Text="Bio" 
                        TextColor="DarkOliveGreen" 
                        BackgroundColor="GhostWhite" 
-                       AbsoluteLayout.LayoutBounds=".5,180,1,40" 
-                       AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
+                       AbsoluteLayout.LayoutBounds=".5,220,1,40" 
+                       AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />--> 
 
 
                 <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,270,1,50" 
@@ -55,7 +62,8 @@
                     <Label x:Name="gradeYear"
                            TextColor="GhostWhite" 
                            BackgroundColor="DarkOliveGreen" 
-                           AbsoluteLayout.LayoutBounds="1,10,.75,50" 
+                           FontSize="20"
+                           AbsoluteLayout.LayoutBounds="1,26,.75,50" 
                            AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
 
                 </AbsoluteLayout>
@@ -74,7 +82,8 @@
                     <Label x:Name="researchInterests"
                            TextColor="GhostWhite" 
                            BackgroundColor="DarkOliveGreen" 
-                           AbsoluteLayout.LayoutBounds="1,10,.75,50" 
+                           FontSize="20"
+                           AbsoluteLayout.LayoutBounds="1,26,.75,50" 
                            AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
 
                 </AbsoluteLayout>
@@ -93,7 +102,8 @@
                     <Label x:Name="major"
                            TextColor="GhostWhite" 
                            BackgroundColor="DarkOliveGreen" 
-                           AbsoluteLayout.LayoutBounds="1,10,.75,50" 
+                           FontSize="20"
+                           AbsoluteLayout.LayoutBounds="1,26,.75,50" 
                            AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
 
                 </AbsoluteLayout>
