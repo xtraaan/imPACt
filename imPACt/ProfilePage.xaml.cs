@@ -14,8 +14,7 @@ namespace imPACt
     {
         public ProfilePage()
         {
-            InitializeComponent();
-            string name = $"{App.currentUser.FirstName} {App.currentUser.LastName}";
+            BindingContext = new ProfilePageViewModel();
         }
     }
 }
