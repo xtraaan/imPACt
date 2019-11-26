@@ -18,5 +18,10 @@
   <ItemGroup>
     <Folder Include="Tables\" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="ProfilePageViewModel.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
 
 </Project>
