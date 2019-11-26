@@ -26,7 +26,8 @@
                         AbsoluteLayout.LayoutBounds=".5,60,60,60" 
                         AbsoluteLayout.LayoutFlags="XProportional" />
 
-                <Label Text="{Binding name}"
+                <Label
+                       x:Name="name"
                        FontAttributes="Bold" 
                        FontSize="26" 
                        TextColor="GhostWhite"
@@ -51,7 +52,7 @@
                            AbsoluteLayout.LayoutBounds="0,25,.25,50" 
                            AbsoluteLayout.LayoutFlags="WidthProportional" />
 
-                    <Entry Text="4th year undergrad" 
+                    <Label x:Name="gradeYear"
                            TextColor="GhostWhite" 
                            BackgroundColor="DarkOliveGreen" 
                            AbsoluteLayout.LayoutBounds="1,10,.75,50" 
@@ -70,7 +71,7 @@
                            AbsoluteLayout.LayoutBounds="0,25,.25,50" 
                            AbsoluteLayout.LayoutFlags="WidthProportional" />
 
-                    <Entry Text="Big Data" 
+                    <Label x:Name="researchInterests"
                            TextColor="GhostWhite" 
                            BackgroundColor="DarkOliveGreen" 
                            AbsoluteLayout.LayoutBounds="1,10,.75,50" 
@@ -89,7 +90,7 @@
                            AbsoluteLayout.LayoutBounds="0,25,.25,50" 
                            AbsoluteLayout.LayoutFlags="WidthProportional" />
 
-                    <Entry Text="Computer Science" 
+                    <Label x:Name="major"
                            TextColor="GhostWhite" 
                            BackgroundColor="DarkOliveGreen" 
                            AbsoluteLayout.LayoutBounds="1,10,.75,50" 
