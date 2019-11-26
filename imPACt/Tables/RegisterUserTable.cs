@@ -16,6 +16,10 @@ namespace imPACt.Tables
         public string Major { get; set; }
         public string ResearchInterest { get; set; }
         public string Year { get; set; }
+        public string School { get; set; }
+        public string Location { get; set; }
+        public string EventName { get; set; }
+        public string EventDescription { get; set; }
 
     }
     

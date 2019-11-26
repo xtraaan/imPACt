@@ -79,9 +79,9 @@ namespace imPACt.Login
 
             App.currentUser = await App.Database.GetUserAsync(NewUser.UserId);
 
-            string mystring = $"{App.currentUser.UserId}\n{App.currentUser.Username}\n{App.currentUser.Email}\n" +
+            /*string mystring = $"{App.currentUser.UserId}\n{App.currentUser.Username}\n{App.currentUser.Email}\n" +
                 $"{App.currentUser.Password}\n{App.currentUser.Major}\n{App.currentUser.Year}\n{App.currentUser.ResearchInterest}";
-                await DisplayAlert("user", mystring, "Ok");
+                await DisplayAlert("user", mystring, "Ok");*/
 
             //NEEDS MORE TO CHECK ALL FIELDS ARE FILLED AND VALID
             var rootPage = Navigation.NavigationStack.FirstOrDefault();
