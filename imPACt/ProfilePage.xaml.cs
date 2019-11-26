@@ -12,10 +12,16 @@ namespace imPACt
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ProfilePage : ContentPage
     {
-        public ProfilePage()
+        public  ProfilePage()
         {
             InitializeComponent();
-            string name = $"{App.currentUser.FirstName} {App.currentUser.LastName}";
+            //BindingContext = new ProfilePageViewModel();
+            name.Text = App.currentUser.FirstName + " " + App.currentUser.LastName;
+            researchInterests.Text = App.currentUser.ResearchInterest;
+            major.Text = App.currentUser.Major;
+            gradeYear.Text = App.currentUser.Year;
+
+
         }
     }
 }
