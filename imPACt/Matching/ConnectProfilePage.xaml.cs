@@ -29,9 +29,8 @@ namespace imPACt.Matching
         async void OnConnectClicked(object sender, EventArgs e)
         {
             App.currentUser.Matches.Add(ClickedUser);
-            var users = App.Database.GetMatches();
-            string list = string.Join(",", users);
-            await DisplayAlert("Matches", list, "Ok");
+            await DisplayAlert("Match Added", "Return to Matches", "Okay");
+            await this.Navigation.PopAsync();
 
         }
     }
