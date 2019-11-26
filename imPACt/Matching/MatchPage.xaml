@@ -4,12 +4,19 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="imPACt.Matching.MatchPage">
+             x:Class="imPACt.Matching.MatchPage"
+             Title="Recommended Matches">
+
+    <NavigationPage.TitleView>
+        <Label Text="Recommended Matvhes" />
+    </NavigationPage.TitleView>
 
     <ContentPage.Content/>
 
+
+
     <StackLayout VerticalOptions="StartAndExpand">
-        <ListView x:Name="listView">
+        <ListView x:Name="listView" RowHeight="100">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -25,10 +32,10 @@
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
 
-                            <Label x:Name="FullName" Text="{Binding FullName}" Grid.Row="0" Grid.Column="0" TranslationY="2" />
-                            <Label x:Name="Email" Text="{Binding Email}" Grid.Row="1" Grid.Column="0" FontSize="Small" TextColor="Accent" TranslationY="-5" />
-                            <Label x:Name="Year" Text="{Binding Year}" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" VerticalOptions="Center" TextColor="Accent" />
-                            <Button x:Name="Connect" Text="Connect" Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" VerticalOptions="Center" TextColor="Black" BackgroundColor="LightGreen" BorderRadius="8" HorizontalOptions="EndAndExpand" Padding="4" Margin="2"/>
+                            <Label x:Name="FullName" Text="{Binding FullName}" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Large" />
+                            <Label x:Name="Email" Text="{Binding Email}" Grid.Row="2" Grid.Column="1" FontSize="Small" VerticalOptions="Center" HorizontalOptions="Center" TextColor="Accent" />
+                            <Label x:Name="Year" Text="{Binding Year}" Grid.Row="3" Grid.Column="1" Grid.RowSpan="2" VerticalOptions="Center" HorizontalOptions="Center" TextColor ="Accent" />
+                            <Button x:Name="Profile" Text="View Profile" Clicked="OnProfileButtonClicked" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" VerticalOptions="Center" TextColor="Black" BackgroundColor="LightGreen" BorderRadius="8" HorizontalOptions="EndAndExpand" Padding="4" Margin="2"/>
                         </Grid>
 
                     </ViewCell>

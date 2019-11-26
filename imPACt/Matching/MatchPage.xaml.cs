@@ -29,10 +29,33 @@ namespace imPACt.Matching
             foreach (var user in users)
             {
                 if (user.UserId != App.currentUser.UserId)
-                    list.Add(user);
+                {
+                    if (App.currentUser.Year == "Freshman" || App.currentUser.Year == "Sophomore" || App.currentUser.Year == "Junior" || App.currentUser.Year == "Senior")
+                    {
+                        if (user.Year == "Graduate" || user.Year == "Ph.d" || user.Year == "Professor")
+                        {
+                            list.Add(user);
+                        }
+                    }
+                    else
+                    {
+                        if (user.Year == "Freshman" || user.Year == "Sophomore" || user.Year == "Junior" || user.Year == "Senior")
+                        {
+                            list.Add(user);
+                        }
+                    }
+                }
             }
             listView.ItemsSource = list;
 
         }
+
+
+
+        async void OnProfileButtonClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ConnectProfilePage());
+        }
+
     }
 }
