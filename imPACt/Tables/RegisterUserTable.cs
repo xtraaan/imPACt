@@ -1,5 +1,8 @@
 ﻿using SQLite;
+using SQLiteNetExtensions.Attributes;
 using System;
+using System.Collections.Generic;
+
 namespace imPACt.Tables
 {
 
@@ -20,6 +23,14 @@ namespace imPACt.Tables
         public string Location { get; set; }
         public string EventName { get; set; }
         public string EventDescription { get; set; }
+
+        [OneToMany(CascadeOperations = CascadeOperation.All)]
+        public List<RegisterUserTable> Matches { get; set; }
+
+        public RegisterUserTable()
+        {
+            Matches = new List<RegisterUserTable>();
+        }
 
     }
     

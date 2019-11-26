@@ -4,6 +4,7 @@ using System.Text;
 using SQLite;
 using imPACt.Tables;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace imPACt
 {
@@ -36,6 +37,12 @@ namespace imPACt
         public Task<int> SaveUserAsync(RegisterUserTable user)
         {
             return _database.InsertAsync(user);
+        }
+
+        // Get Match list
+        public List<RegisterUserTable> GetMatches()
+        {
+            return App.currentUser.Matches.ToList();
         }
 
         public Task<RegisterUserTable> QueryUserAsync(string username, string pass)

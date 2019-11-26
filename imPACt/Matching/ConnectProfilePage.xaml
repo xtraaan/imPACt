@@ -29,7 +29,7 @@
                        AbsoluteLayout.LayoutBounds=".5,140,1,40" 
                        AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
 
-                <Button Text="Connect" 
+                <Button Text="Connect" Clicked="OnConnectClicked"
                         FontAttributes="Bold"
                         BackgroundColor="GhostWhite"
                         TextColor="DarkOliveGreen"
