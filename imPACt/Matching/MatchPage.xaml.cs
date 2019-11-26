@@ -46,7 +46,11 @@ namespace imPACt.Matching
                     }
                 }
             }
-            listView.ItemsSource = list;
+
+            if (list.Count() != 0)
+                listView.ItemsSource = list;
+            else
+                await DisplayAlert("No Matches Found", "Try again later...", "Okay", "Cancel");
 
         }
 
@@ -54,7 +58,9 @@ namespace imPACt.Matching
 
         async void OnProfileButtonClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ConnectProfilePage());
+            var button = sender as Button;
+            var user = button.BindingContext as RegisterUserTable;
+            await Navigation.PushAsync(new ConnectProfilePage(user));
         }
 
     }

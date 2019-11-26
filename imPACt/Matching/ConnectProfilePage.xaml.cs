@@ -1,27 +1,28 @@
 ﻿
+using imPACt.Tables;
 using Xamarin.Forms;
 
 namespace imPACt.Matching
 {
     public partial class ConnectProfilePage : ContentPage
     {
-        public ConnectProfilePage()
+        public RegisterUserTable ClickedUser;
+        public ConnectProfilePage(RegisterUserTable user)
         {
+
             InitializeComponent();
+            ClickedUser = user;
         }
 
-        protected override async void OnAppearing()
+        protected override void OnAppearing()
         {
             base.OnAppearing();
+            name.Text = ClickedUser.FullName;
+            researchInterests.Text = ClickedUser.ResearchInterest;
+            major.Text = ClickedUser.Major;
+            gradeYear.Text = ClickedUser.Year;
 
-            var users = await App.Database.GetUsersAsync();
-            foreach (var user in users)
-            {
-                name.Text = user.FullName;
-                researchInterests.Text = user.ResearchInterest;
-                major.Text = user.Major;
-                gradeYear.Text = user.Year;
-            }
         }
     }
 }
+
