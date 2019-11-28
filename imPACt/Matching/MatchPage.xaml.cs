@@ -49,21 +49,8 @@ namespace imPACt.Matching
 
             if (list.Count() != 0)
                 listView.ItemsSource = list;
-            //else
-            //    await DisplayAlert("No Matches Found", "Try again later...", "Okay", "Cancel");
-
-
-            List<RegisterUserTable> matches = new List<RegisterUserTable>();
-
-            foreach (var user in App.currentUser.Matches.ToList())
-            {
-                if (user.Major == App.currentUser.Major)
-                {
-                    matches.Add(user);
-                }
-            }
-
-            listView2.ItemsSource = matches;
+            else
+                await DisplayAlert("No Matches Found", "Try again later...", "Okay", "Cancel");
         }
 
 

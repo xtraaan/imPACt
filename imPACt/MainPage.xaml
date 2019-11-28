@@ -12,7 +12,7 @@
             x:Class="imPACt.MainPage">
     
     <local:ProfilePage Title="Profile" Icon="Profile.png"/>
-    <local1:MatchPage Title="Match" />
+    <local1:MainMatchPage Title="Matches" />
     
 </TabbedPage>
 

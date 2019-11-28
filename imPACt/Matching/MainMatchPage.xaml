@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
+              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              x:Class="imPACt.Matching.MainMatchPage"
+              xmlns:local="clr-namespace:imPACt.Matching"
+              xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions">
+
+    <local:MatchPage>
+    </local:MatchPage>
+    <local:Connections>
+    </local:Connections>
+
+</CarouselPage>
