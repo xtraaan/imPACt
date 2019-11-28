@@ -2,8 +2,7 @@
 <CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
               x:Class="imPACt.Matching.MainMatchPage"
-              xmlns:local="clr-namespace:imPACt.Matching"
-              xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions">
+              xmlns:local="clr-namespace:imPACt.Matching">
 
     <local:MatchPage>
     </local:MatchPage>
