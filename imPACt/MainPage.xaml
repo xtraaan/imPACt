@@ -13,7 +13,8 @@
     
     <local:ProfilePage Title="Profile" Icon="Profile.png"/>
     <local1:MainMatchPage Title="Matches" />
-    <local:EventsPage Title="Matches" />
+    <local:EventsPage Title="EventsTest" />
+    <local:EventsFormPage Title="EventsFormTest" />
 
 </TabbedPage>
 
