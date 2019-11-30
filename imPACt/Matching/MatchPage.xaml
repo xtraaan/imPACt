@@ -13,6 +13,9 @@
     <ContentPage.Content>
     
    <StackLayout VerticalOptions="Center">
+            <StackLayout>
+                <Label x:Name="RecommendedMatches" Text="Recommended Matches" VerticalOptions="Start" HorizontalOptions="Center" FontSize="Title" FontFamily="Times New Roman" TextDecorations="Underline"/>
+            </StackLayout>
             <cards:CoverFlowView x:Name="listView"
                 PositionShiftValue="115"
                 IsCyclical="false">
