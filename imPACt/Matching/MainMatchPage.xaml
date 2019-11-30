@@ -2,7 +2,8 @@
 <CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
               x:Class="imPACt.Matching.MainMatchPage"
-              xmlns:local="clr-namespace:imPACt.Matching">
+              xmlns:local="clr-namespace:imPACt.Matching"
+              >
 
     <local:MatchPage>
     </local:MatchPage>
