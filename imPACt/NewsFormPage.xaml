@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="imPACt.NewsFormPage">
+
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="StartAndExpand">
+            <Label Text="News Name" />
+            <Entry x:Name="NewsName" Placeholder="News Name" />
+            <Label Text="Event Sponsor" />
+            <Entry x:Name="NewsDescription" Placeholder="News Description" />
+            <Label Text="Event Date" />
+			<Entry x:Name="NewsDate" Placeholder="News Date" />
+			<Button Text="Create News" Clicked="OnCreateNewsButtonClicked" />
+		</StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>
