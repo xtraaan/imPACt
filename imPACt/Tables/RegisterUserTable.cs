@@ -23,6 +23,9 @@ namespace imPACt.Tables
         public string Location { get; set; }
         public string EventName { get; set; }
         public string EventDescription { get; set; }
+        public string NewsImage { get; set; }
+        public string NewsTitle { get; set; }
+        public string NewsDescription { get; set; }
 
         [OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<RegisterUserTable> Matches { get; set; }
