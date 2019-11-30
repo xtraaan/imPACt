@@ -11,5 +11,10 @@ namespace imPACt
         {
             InitializeComponent();
         }
+
+        async void OnCreateEventButtonClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new EventsFormPage());
+        }
     }
 }
