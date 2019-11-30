@@ -85,10 +85,21 @@
                        HorizontalTextAlignment="Center" 
                        AbsoluteLayout.LayoutBounds=".5,320,1,50" 
                        AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
+
+                <Button Text="Sign Up" 
+                        FontAttributes="Bold"
+                        BackgroundColor="GhostWhite"
+                        TextColor="LightSlateGray"
+                        AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
+
+                <Button Text="Invite Members" 
+                        FontAttributes="Bold"
+                        BackgroundColor="GhostWhite"
+                        TextColor="LightSlateGray"
+                        AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
             </AbsoluteLayout>
 
         </ScrollView>
 
-
-    </ContentPage.Content>
+        </ContentPage.Content>
 </ContentPage>
