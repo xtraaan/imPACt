@@ -4,16 +4,29 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="imPACt.Login.SignUpInfo">
-    
+             x:Class="imPACt.Login.SignUpInfo"
+             BackgroundColor="White">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="10, 20, 10, 0" Android="10, 20, 10, 0" />
+    </ContentPage.Padding>
+
     <ContentPage.Content>
+
+
+        <StackLayout VerticalOptions="StartAndExpand" Margin="20,0,20,0" BackgroundColor="White">
         
-        
-        <StackLayout>
+        <!--    <Label Text="First Name" />
+            <Entry x:Name="FirstnameEntry" Placeholder="First Name " />
+            <Label Text="Last Name" />
+            <Entry x:Name="LastnameEntry" Placeholder="Last Name" /> -->
+
+
             <Picker x:Name="Major" Title="Major" SelectedIndexChanged="Picker_SelectedIndexChanged">
                 <Picker.Items>
                 </Picker.Items>
             </Picker>
+            
             
             <Picker x:Name="ResearchInterests" Title="Research Interests" SelectedIndexChanged="ResearchInterests_SelectedIndexChanged">
                 <Picker.Items>
@@ -25,8 +38,9 @@
                 </Picker.Items>
             </Picker>
 
+           
 
-            <Button Text="Sign Up" Clicked="OnSignUpInfoClicked" />
+            <Button Text="Sign Up" Clicked="OnSignUpInfoClicked" BackgroundColor="#3897F0"  TextColor="White" WidthRequest="50"/>
             
         </StackLayout>
     </ContentPage.Content>
