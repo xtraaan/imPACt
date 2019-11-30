@@ -1,5 +1,112 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="imPACt.News">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" Title="NEWS"
+
+             x:Class="imPACt.News">
+
     <ContentPage.Content>
+        <ScrollView>
+
+            <AbsoluteLayout BackgroundColor="WhiteSmoke">
+
+                <!--<BoxView BackgroundColor="Blue"
+                         AbsoluteLayout.LayoutBounds="0,0,1,30" 
+                         AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional" />-->
+                
+
+                <Button Text="News Articles" 
+                        FontAttributes="Bold"
+                        BackgroundColor="GhostWhite"
+                        TextColor="LightSlateGray"
+                        AbsoluteLayout.LayoutBounds="0,0,1,35"
+                        AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
+
+
+                <Label FontSize="18" 
+                           Text="Title:" 
+                           TextColor="Black" 
+                           AbsoluteLayout.LayoutBounds=".5,140,1,40" 
+                           AbsoluteLayout.LayoutFlags="WidthProportional" />
+                <Label
+                       x:Name="newsName"
+                       FontAttributes="Bold" 
+                       FontSize="18" 
+                       TextColor="LightSlateGray"
+                       HorizontalTextAlignment="Center" 
+                       AbsoluteLayout.LayoutBounds=".5,140,1,40" 
+                       AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
+
+                <Label FontSize="18" 
+                           Text="Description:" 
+                           TextColor="Black" 
+                           AbsoluteLayout.LayoutBounds=".5,180,1,40" 
+                           AbsoluteLayout.LayoutFlags="WidthProportional" />
+
+                <Label
+                       x:Name="newsDescription"
+                       FontAttributes="Bold" 
+                       FontSize="18" 
+                       TextColor="LightSlateGray"
+                       HorizontalTextAlignment="Center" 
+                       AbsoluteLayout.LayoutBounds=".5,180,1,40" 
+                       AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
+
+                <Label FontSize="18" 
+                           Text="Date Published:" 
+                           TextColor="Black" 
+                           AbsoluteLayout.LayoutBounds=".5,220,1,40" 
+                           AbsoluteLayout.LayoutFlags="WidthProportional" />
+
+                <Label
+                       x:Name="newsDate"
+                       FontAttributes="Bold" 
+                       FontSize="18" 
+                       TextColor="LightSlateGray"
+                       HorizontalTextAlignment="Center" 
+                       AbsoluteLayout.LayoutBounds=".5,220,1,40" 
+                       AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
+
+                <Label FontSize="18" 
+                           Text="Author:" 
+                           TextColor="Black" 
+                           AbsoluteLayout.LayoutBounds=".5,250,1,50" 
+                           AbsoluteLayout.LayoutFlags="WidthProportional" />
+
+                <Label
+                       x:Name="newsAuthor"
+                       FontAttributes="Bold" 
+                       FontSize="18" 
+                       TextColor="LightSlateGray"
+                       HorizontalTextAlignment="Center" 
+                       AbsoluteLayout.LayoutBounds=".5,250,1,50" 
+                       AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
+
+                <Button Text="Save Article" 
+                        FontAttributes="Bold"
+                        BackgroundColor="GhostWhite"
+                        TextColor="LightSlateGray"
+                        AbsoluteLayout.LayoutBounds=".5,320,1,50" 
+                        AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
+
+                <Button Text="Read Comments" 
+                        FontAttributes="Bold"
+                        BackgroundColor="GhostWhite"
+                        TextColor="Black"
+                        AbsoluteLayout.LayoutBounds=".5,320,1,50" 
+                        AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
+            </AbsoluteLayout>
+
+        </ScrollView>
     </ContentPage.Content>
+
+    
+
+
+
+
+
 </ContentPage>
