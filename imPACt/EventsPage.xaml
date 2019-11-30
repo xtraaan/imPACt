@@ -74,7 +74,7 @@
                 <Label FontSize="18" 
                            Text="Event Sponsor:" 
                            TextColor="Black" 
-                           AbsoluteLayout.LayoutBounds=".5,320,1,50" 
+                           AbsoluteLayout.LayoutBounds=".5,250,1,50" 
                            AbsoluteLayout.LayoutFlags="WidthProportional" />
 
                 <Label
@@ -83,19 +83,21 @@
                        FontSize="18" 
                        TextColor="LightSlateGray"
                        HorizontalTextAlignment="Center" 
-                       AbsoluteLayout.LayoutBounds=".5,320,1,50" 
+                       AbsoluteLayout.LayoutBounds=".5,250,1,50" 
                        AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
 
                 <Button Text="Sign Up" 
                         FontAttributes="Bold"
                         BackgroundColor="GhostWhite"
                         TextColor="LightSlateGray"
+                        AbsoluteLayout.LayoutBounds=".5,320,1,50" 
                         AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
 
                 <Button Text="Invite Members" 
                         FontAttributes="Bold"
                         BackgroundColor="GhostWhite"
-                        TextColor="LightSlateGray"
+                        TextColor="Black"
+                        AbsoluteLayout.LayoutBounds=".5,320,1,50" 
                         AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
             </AbsoluteLayout>
 
