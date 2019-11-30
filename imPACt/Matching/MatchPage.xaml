@@ -3,14 +3,80 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView"
+             xmlns:controls="clr-namespace:PanCardView.Controls;assembly=PanCardView"
+             xmlns:res="clr-namespace:PanCardView.Resources;assembly=PanCardView"
+             xmlns:proc="clr-namespace:PanCardView.Processors;assembly=PanCardView"
              mc:Ignorable="d"
              x:Class="imPACt.Matching.MatchPage">
 
     <ContentPage.Content>
+    
+   <StackLayout VerticalOptions="Center">
+            <StackLayout>
+                <Label x:Name="RecommendedMatches" Text="Recommended Matches" VerticalOptions="Start" HorizontalOptions="Center" FontSize="Title" FontFamily="Times New Roman" TextDecorations="Underline"/>
+            </StackLayout>
+            <cards:CoverFlowView x:Name="listView"
+                PositionShiftValue="115"
+                IsCyclical="false">
+
+                <x:Arguments>
+                    <proc:BaseCoverFlowFrontViewProcessor ScaleFactor="0.75" OpacityFactor="0.25" />
+                    <proc:BaseCoverFlowBackViewProcessor  ScaleFactor="0.75" OpacityFactor="0.25" />
+                </x:Arguments>
+
+            <cards:CoverFlowView.ItemTemplate>
+                <DataTemplate>
+                   <Frame
+                       BackgroundColor="AntiqueWhite"
+                       Margin="60"
+                       Padding="30"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Fill"
+                       HasShadow="True" 
+                       IsClippedToBounds="true"
+                       CornerRadius="10"
+                       >
+
+                    <StackLayout VerticalOptions="CenterAndExpand">
+                        <Label x:Name="FullName" Text="{Binding FullName}" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Title" />
+                        <Label x:Name="Email" Text="{Binding Email}" Grid.Row="2" Grid.Column="1" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Center" />
+                        <Label x:Name="Year" Text="{Binding Year}" Grid.Row="3" Grid.Column="1" Grid.RowSpan="2" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Center" />
+                        <!--<Button x:Name="Profile" Text="View Profile" Clicked="OnProfileButtonClicked" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="3" VerticalOptions="Center" TextColor="Black" BackgroundColor="LightGreen" BorderRadius="8" HorizontalOptions="EndAndExpand" Padding="4" Margin="2"/>-->
+
+                        <Button x:Name="Profile" Text="View Profile" Clicked="OnProfileButtonClicked" BackgroundColor="#3897F0" TextColor="White" HeightRequest="50" VerticalOptions="Center" />
+                    </StackLayout>  
 
 
 
-    <StackLayout VerticalOptions="StartAndExpand">
+
+                  </Frame>
+                </DataTemplate>
+            </cards:CoverFlowView.ItemTemplate>
+
+            <!--<controls:IndicatorsControl />-->
+            <!--<controls:LeftArrowControl
+                AbsoluteLayout.LayoutBounds="0, 1, -1, -1"
+                ImageSource="{Static res:ResourcesInfo.BlackLeftArrowImageSource}" />
+            <controls:RightArrowControl
+                AbsoluteLayout.LayoutBounds="1, 1, -1, -1"
+                ImageSource="{Static res:ResourcesInfo.BlackRightArrowImageSource}"/>-->
+
+            <controls:LeftArrowControl
+                HorizontalOptions="Center"
+            ImageSource="{Static res:ResourcesInfo.BlackLeftArrowImageSource}" />
+            <controls:RightArrowControl
+                    HorizontalOptions="Center"
+                ImageSource="{Static res:ResourcesInfo.BlackRightArrowImageSource}"/>
+
+        </cards:CoverFlowView>
+        
+        
+    </StackLayout>
+
+
+
+    <!--<StackLayout VerticalOptions="StartAndExpand">
         <ListView x:Name="listView" RowHeight="100">
             <ListView.Header>
                 <Grid HorizontalOptions="FillAndExpand">
@@ -43,7 +109,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-    </StackLayout>
+    </StackLayout>-->
     </ContentPage.Content>
 
 

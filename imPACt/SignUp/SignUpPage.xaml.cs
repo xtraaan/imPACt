@@ -30,9 +30,7 @@ namespace imPACt
             Regex regex = new Regex(@"^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.(edu)$", RegexOptions.IgnoreCase);
 
             //Check if content is filled in correctly
-            if (!string.IsNullOrWhiteSpace(FirstnameEntry.Text)
-                && !string.IsNullOrWhiteSpace(LastnameEntry.Text)
-                && !string.IsNullOrWhiteSpace(usernameEntry.Text)
+            if ( !string.IsNullOrWhiteSpace(usernameEntry.Text)
                 && !string.IsNullOrWhiteSpace(passwordEntry.Text)
                 && regex.IsMatch(emailEntry.Text)
                 && (passwordEntry.Text == RepasswordEntry.Text) 
@@ -41,8 +39,7 @@ namespace imPACt
                 //data for filling new user signup
                 var newUser = new RegisterUserTable
                 {
-                    FirstName = FirstnameEntry.Text,
-                    LastName = LastnameEntry.Text,
+                    
                     Username = usernameEntry.Text,
                     Password = passwordEntry.Text,
                     Email = emailEntry.Text

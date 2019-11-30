@@ -2,31 +2,28 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
 			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 			 x:Class="imPACt.SignUpPage"
-			 Title="Sign Up">
-	<ContentPage.Content>
-		<StackLayout VerticalOptions="StartAndExpand">
-            <Label Text="First Name" />
-            <Entry x:Name="FirstnameEntry" Placeholder="First Name " />
-            <Label Text="Last Name" />
-            <Entry x:Name="LastnameEntry" Placeholder="Last Name" />
+			 Title="Sign Up"
+             BackgroundColor="White">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="10, 20, 10, 0" Android="10, 20, 10, 0" />
+    </ContentPage.Padding>
+
+    <ContentPage.Content BackgroundColor="White">
+        <StackLayout VerticalOptions="StartAndExpand" Margin="20,0,20,0">
+
+            
             <Label Text="Username" />
 			<Entry x:Name="usernameEntry" Placeholder="username" />
 			<Label Text="Password" />
-			<Entry x:Name="passwordEntry" IsPassword="true" />
+			<Entry x:Name="passwordEntry" IsPassword="true" Placeholder="password"/>
             <Label Text="Re-Enter Password" />
-            <Entry x:Name="RepasswordEntry" IsPassword="true" />
+            <Entry x:Name="RepasswordEntry" IsPassword="true" Placeholder="re-enter password"/>
             <Label Text="Email address" />
-			<Entry x:Name="emailEntry" />
-			<Button Text="Next" Clicked="OnSignUpButtonClicked" />
+			<Entry x:Name="emailEntry" Placeholder="Email Address"/>
+            <Button Text="Next" Clicked="OnSignUpButtonClicked" BackgroundColor="#3897F0" TextColor="White" />
 
-            <!--<ListView x:Name="listView">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <TextCell Text="{Binding UserId}"
-                                  Detail="{Binding Email}"/>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>-->
+            
             
             
 			
