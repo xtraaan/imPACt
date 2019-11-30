@@ -26,37 +26,61 @@
                         AbsoluteLayout.LayoutBounds="0,0,1,35"
                         AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
 
+
+                <Label FontSize="18" 
+                           Text="Event Name:" 
+                           TextColor="Black" 
+                           AbsoluteLayout.LayoutBounds=".5,140,1,40" 
+                           AbsoluteLayout.LayoutFlags="WidthProportional" />
                 <Label
                        x:Name="eventName"
                        FontAttributes="Bold" 
-                       FontSize="26" 
+                       FontSize="18" 
                        TextColor="LightSlateGray"
                        HorizontalTextAlignment="Center" 
                        AbsoluteLayout.LayoutBounds=".5,140,1,40" 
                        AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
 
+                <Label FontSize="18" 
+                           Text="Event Description:" 
+                           TextColor="Black" 
+                           AbsoluteLayout.LayoutBounds=".5,180,1,40" 
+                           AbsoluteLayout.LayoutFlags="WidthProportional" />
+
                 <Label
                        x:Name="eventDescription"
                        FontAttributes="Bold" 
-                       FontSize="26" 
+                       FontSize="18" 
                        TextColor="LightSlateGray"
                        HorizontalTextAlignment="Center" 
                        AbsoluteLayout.LayoutBounds=".5,180,1,40" 
                        AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
 
+                <Label FontSize="18" 
+                           Text="Event Date:" 
+                           TextColor="Black" 
+                           AbsoluteLayout.LayoutBounds=".5,220,1,40" 
+                           AbsoluteLayout.LayoutFlags="WidthProportional" />
+
                 <Label
                        x:Name="eventDate"
                        FontAttributes="Bold" 
-                       FontSize="26" 
+                       FontSize="18" 
                        TextColor="LightSlateGray"
                        HorizontalTextAlignment="Center" 
                        AbsoluteLayout.LayoutBounds=".5,220,1,40" 
                        AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
 
+                <Label FontSize="18" 
+                           Text="Event Sponsor:" 
+                           TextColor="Black" 
+                           AbsoluteLayout.LayoutBounds=".5,320,1,50" 
+                           AbsoluteLayout.LayoutFlags="WidthProportional" />
+
                 <Label
                        x:Name="eventSponsor"
                        FontAttributes="Bold" 
-                       FontSize="26" 
+                       FontSize="18" 
                        TextColor="LightSlateGray"
                        HorizontalTextAlignment="Center" 
                        AbsoluteLayout.LayoutBounds=".5,320,1,50" 
