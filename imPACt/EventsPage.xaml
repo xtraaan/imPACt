@@ -4,104 +4,51 @@
 
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" Title="EVENTS"
+             mc:Ignorable="d"
 
-             x:Class="imPACt.EventsPage">
-
-
-        <ContentPage.Content>
-        <ScrollView>
-
-            <AbsoluteLayout BackgroundColor="WhiteSmoke">
-
-                <!--<BoxView BackgroundColor="Blue"
-                         AbsoluteLayout.LayoutBounds="0,0,1,30" 
-                         AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional" />-->
-                
-
-                <Button Text="Events" 
-                        FontAttributes="Bold"
-                        BackgroundColor="GhostWhite"
-                        TextColor="LightSlateGray"
-                        AbsoluteLayout.LayoutBounds="0,0,1,35"
-                        AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
+             x:Class="imPACt.EventsPage"
+             Title="{Binding EventName}">
 
 
-                <Label FontSize="18" 
-                           Text="Event Name:" 
-                           TextColor="Black" 
-                           AbsoluteLayout.LayoutBounds=".5,140,1,40" 
-                           AbsoluteLayout.LayoutFlags="WidthProportional" />
-                <Label
-                       x:Name="eventName"
-                       FontAttributes="Bold" 
-                       FontSize="18" 
-                       TextColor="LightSlateGray"
-                       HorizontalTextAlignment="Center" 
-                       AbsoluteLayout.LayoutBounds=".5,140,1,40" 
-                       AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
+<ContentPage.Content>
+    <ScrollView>
+        <FlexLayout
+            AlignItems="Start"
+            AlignContent="Start"                   
+            Wrap="Wrap">
 
-                <Label FontSize="18" 
-                           Text="Event Description:" 
-                           TextColor="Black" 
-                           AbsoluteLayout.LayoutBounds=".5,180,1,40" 
-                           AbsoluteLayout.LayoutFlags="WidthProportional" />
+            <!-- change the picture -->
+            <Image Source="unnamed.png" FlexLayout.Basis="100%" />
 
-                <Label
-                       x:Name="eventDescription"
-                       FontAttributes="Bold" 
-                       FontSize="18" 
-                       TextColor="LightSlateGray"
-                       HorizontalTextAlignment="Center" 
-                       AbsoluteLayout.LayoutBounds=".5,180,1,40" 
-                       AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
+            <Label x:Name="eventName" Text="{Binding EventName}" HorizontalTextAlignment="Center" TextColor="Black"
+                   FontAttributes="Bold" FontSize="Large" Margin="10, 10" />
+                   
+            <BoxView FlexLayout.Basis="100%" HeightRequest="0" />
 
-                <Label FontSize="18" 
-                           Text="Event Date:" 
-                           TextColor="Black" 
-                           AbsoluteLayout.LayoutBounds=".5,220,1,40" 
-                           AbsoluteLayout.LayoutFlags="WidthProportional" />
+            <Label x:Name="eventSponsor" Text="Event Sponsor:" FontAttributes="Bold" FontSize="Medium" TextColor="Black"
+                   Margin="10,10" HorizontalOptions="FillAndExpand" />
+            <BoxView FlexLayout.Basis="100%" HeightRequest="0" />
+            <Label Text="{Binding EventSponsor}" Margin="10,10" FontSize="Small" />
 
-                <Label
-                       x:Name="eventDate"
-                       FontAttributes="Bold" 
-                       FontSize="18" 
-                       TextColor="LightSlateGray"
-                       HorizontalTextAlignment="Center" 
-                       AbsoluteLayout.LayoutBounds=".5,220,1,40" 
-                       AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
+            <BoxView FlexLayout.Basis="100%" HeightRequest="0" />
+            
+            <Label x:Name="eventDate" Text="Event Date:" FontAttributes="Bold" FontSize="Medium" TextColor="Black" 
+                   Margin="10,10" HorizontalOptions="FillAndExpand" />
+            <BoxView FlexLayout.Basis="100%" HeightRequest="0" />
+            <Label Text="{Binding EventDate}" Margin="10,10" FontSize="Small" />
 
-                <Label FontSize="18" 
-                           Text="Event Sponsor:" 
-                           TextColor="Black" 
-                           AbsoluteLayout.LayoutBounds=".5,250,1,50" 
-                           AbsoluteLayout.LayoutFlags="WidthProportional" />
+            <Label x:Name="eventDescription" Text="Event Description:" FontAttributes="Bold" FontSize="Medium" TextColor="Black" 
+                   Margin="10,10" HorizontalOptions="FillAndExpand" />
+            <BoxView FlexLayout.Basis="100%" HeightRequest="0" />
+            <Label Text="{Binding EventDescription}" Margin="10,10" FontSize="Small" />
 
-                <Label
-                       x:Name="eventSponsor"
-                       FontAttributes="Bold" 
-                       FontSize="18" 
-                       TextColor="LightSlateGray"
-                       HorizontalTextAlignment="Center" 
-                       AbsoluteLayout.LayoutBounds=".5,250,1,50" 
-                       AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
+            <Label x:Name="eventCreator" Text="Event Creator:" FontAttributes="Bold" FontSize="Medium" TextColor="Black"
+                   Margin="10,10" HorizontalOptions="FillAndExpand" />
+            <BoxView FlexLayout.Basis="100%" HeightRequest="0" />
+            <Label Text="{Binding EventSponsor}" Margin="10,10" FontSize="Small" />
 
-                <Button Text="Sign Up" 
-                        FontAttributes="Bold"
-                        BackgroundColor="GhostWhite"
-                        TextColor="LightSlateGray"
-                        AbsoluteLayout.LayoutBounds=".5,320,1,50" 
-                        AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
+        </FlexLayout>
+    </ScrollView>
 
-                <Button Text="Invite Members" 
-                        FontAttributes="Bold"
-                        BackgroundColor="GhostWhite"
-                        TextColor="Black"
-                        AbsoluteLayout.LayoutBounds=".5,320,1,50" 
-                        AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" />
-            </AbsoluteLayout>
-
-        </ScrollView>
-
-        </ContentPage.Content>
+    </ContentPage.Content>
 </ContentPage>
