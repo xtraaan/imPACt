@@ -72,6 +72,8 @@ namespace imPACt.Login
             // var db = new SQLiteConnection(dbpath);
             // db.CreateTable<RegisterUserTable>();
 
+            NewUser.FirstName = FirstnameEntry.Text;
+            NewUser.LastName = LastnameEntry.Text;
 
 
             await App.Database.SaveUserAsync(NewUser);
@@ -114,10 +116,25 @@ namespace imPACt.Login
         private IList<Majors> GetMajorMethod()
         {
             return new List<Majors>{
-                new Majors { MajorSel = "Computer Science"},
-                new Majors { MajorSel = "Art"},
-                new Majors { MajorSel = "Math"},
-                new Majors { MajorSel = "English"},
+                new Majors { MajorSel = "Accounting" },
+
+            new Majors { MajorSel = "Applied Mathematics" },
+            new Majors { MajorSel = "Architectural Engineering" },
+            new Majors { MajorSel = "Architecture" },
+            new Majors { MajorSel = "Biochemistry" },
+            new Majors { MajorSel = "Bioengineering" },
+            new Majors { MajorSel = "Biophysics" },
+            new Majors { MajorSel = "Chemical Engineering" },
+            new Majors { MajorSel = "Computer Science" },
+            new Majors { MajorSel = "Civil Engineering" },
+            new Majors { MajorSel = "Computer Engineering" },
+            new Majors { MajorSel = "Electrical Engineering" },
+            new Majors { MajorSel = "Engineering Science" },
+            new Majors { MajorSel = "Mechanical Engineering" },
+            new Majors { MajorSel = "Microbiology" },
+            new Majors { MajorSel = "Nuclear Engineering" },
+            
+           
             };
            
         }

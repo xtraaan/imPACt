@@ -8,11 +8,22 @@
             
             xmlns:local1="clr-namespace:imPACt.Matching"
             xmlns:local="clr-namespace:imPACt"
+            
             mc:Ignorable="d" 
-            x:Class="imPACt.MainPage">
+            x:Class="imPACt.MainPage"
+            x:Name="Tabbed"
+            
+            BarBackgroundColor="#3897F0"
+           
+            BarTextColor="Black"
+            
+            >
+
+    <local:EventsPage></local:EventsPage>
+    <local:ChatPage  ></local:ChatPage>
+    <local1:MainMatchPage  ></local1:MainMatchPage>
+    <local:ProfilePage ></local:ProfilePage>
     
-    <local:ProfilePage Title="Profile" Icon="Profile.png"/>
-    <local1:MainMatchPage Title="Matches" />
     
 </TabbedPage>
 

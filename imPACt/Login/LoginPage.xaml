@@ -11,7 +11,7 @@
         <OnPlatform x:TypeArguments="Thickness" iOS="10, 20, 10, 0" Android="10, 20, 10, 0" />
     </ContentPage.Padding>
 
-    <ContentPage.Content BackgroundColor="White">
+    <ContentPage.Content BackgroundColor="White" VerticalOptions="StartAndExpand" Margin="20,0,20,0">
 
         <Grid Grid.Row="1" Margin="20,0,20,0" BackgroundColor="White">
             <Grid.RowDefinitions>
@@ -28,7 +28,9 @@
 
             <!-- <Label Text="imPACt" FontAttributes="Italic" HorizontalOptions="Center" TextColor="Yellow" FontSize="Header" FontFamily="Lobster-Regular"/> -->
             <!--  <Label Grid.Row="0" Text="imPACt" HorizontalOptions="Center" VerticalOptions="Center" FontSize="75" />-->
-            <Image Grid.Row="0" Source="unnamed.png" HorizontalOptions="Center"/>
+            <Image Grid.Row="0" Source="impactlogo.png" HorizontalOptions="Center"/>
+
+            
 
             <Entry Grid.Row="1" x:Name="usernameEntry" Placeholder="username" PlaceholderColor="#bababa" FontSize="16"/>
 
@@ -39,11 +41,13 @@
             <Label Grid.Row="4" Text="Forgot password?" HorizontalOptions="Center" TextColor="#3897F0"/>
             
             <Grid Grid.Row="5">
+                
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
+                
                 <Label BackgroundColor="#bababa" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
                 <Label Text="OR" Grid.Column="1" VerticalOptions="Center" Margin="10,0,10,0"/>
                 <Label BackgroundColor="#bababa" Grid.Column="2" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>

@@ -3,6 +3,8 @@
               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
               x:Class="imPACt.Matching.MainMatchPage"
               xmlns:local="clr-namespace:imPACt.Matching"
+              Title="Matches"
+              IconImageSource="baseline_view_carousel_black_18dp.png"
               >
 
     <local:MatchPage>

@@ -16,19 +16,22 @@
 
         <StackLayout VerticalOptions="StartAndExpand" Margin="20,0,20,0" BackgroundColor="White">
         
-        <!--    <Label Text="First Name" />
+            <Label Text="First Name" TextColor="Black"/>
+            
             <Entry x:Name="FirstnameEntry" Placeholder="First Name " />
+            
             <Label Text="Last Name" />
-            <Entry x:Name="LastnameEntry" Placeholder="Last Name" /> -->
+
+            <Entry x:Name="LastnameEntry" TextColor="Black" Placeholder="Last Name" FontSize="16" /> 
 
 
-            <Picker x:Name="Major" Title="Major" SelectedIndexChanged="Picker_SelectedIndexChanged">
+            <Picker x:Name="Major" Title="Select a Major" SelectedIndexChanged="Picker_SelectedIndexChanged">
                 <Picker.Items>
                 </Picker.Items>
             </Picker>
             
             
-            <Picker x:Name="ResearchInterests" Title="Research Interests" SelectedIndexChanged="ResearchInterests_SelectedIndexChanged">
+            <Picker x:Name="ResearchInterests" Title="Pick a Research Interests" SelectedIndexChanged="ResearchInterests_SelectedIndexChanged">
                 <Picker.Items>
                 </Picker.Items>
             </Picker>
@@ -38,9 +41,8 @@
                 </Picker.Items>
             </Picker>
 
-           
 
-            <Button Text="Sign Up" Clicked="OnSignUpInfoClicked" BackgroundColor="#3897F0"  TextColor="White" WidthRequest="50"/>
+            <Button Text="Sign Up"  VerticalOptions="End" Clicked="OnSignUpInfoClicked" BackgroundColor="#3897F0"  TextColor="White" HeightRequest="50"/>
             
         </StackLayout>
     </ContentPage.Content>

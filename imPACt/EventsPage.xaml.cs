@@ -10,6 +10,7 @@ namespace imPACt
         public EventsPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
     }
 }
