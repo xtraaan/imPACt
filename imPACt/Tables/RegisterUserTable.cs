@@ -25,7 +25,6 @@ namespace imPACt.Tables
         public string EventDescription { get; set; }
         public string EventDate { get; set; }
         public string EventSponsor { get; set; }
-        public string NewsImage { get; set; }
         public string NewsTitle { get; set; }
         public string NewsDate { get; set; }
         public string NewsDescription { get; set; }
