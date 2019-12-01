@@ -20,7 +20,9 @@ namespace imPACt
             eventDescription.Text = App.currentUser.EventDescription;
             eventDate.Text = App.currentUser.EventDate;
             eventSponsor.Text = App.currentUser.EventSponsor;
-            //this.BindingContext = this;
+            eventCreator.Text = App.currentUser.FullName;
+            this.BindingContext = this;
+
         }
     }
 }
