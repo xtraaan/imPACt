@@ -1,5 +1,47 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="imPACt.SettingsPage">
+
+    <ContentPage.ToolbarItems >
+        <ToolbarItem Text="Save"
+                     Activated="ToolbarItem_Activated"
+                     />
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
+        
+        <StackLayout VerticalOptions="StartAndExpand" Margin="20,0,20,0" BackgroundColor="White">
+
+            <Label Text="First Name" TextColor="Black"/>
+
+            <Entry x:Name="FirstnameEntry" Placeholder="First Name " />
+
+            <Label Text="Last Name" />
+
+            <Entry x:Name="LastnameEntry" TextColor="Black" Placeholder="Last Name" FontSize="16" />
+
+            <Label Text="Major"/>
+
+            <Picker x:Name="Major" Title="Select a Major" SelectedIndexChanged="Picker_SelectedIndexChanged">
+                <Picker.Items>
+                </Picker.Items>
+            </Picker>
+
+            <Label  Text="Research Interests"/>
+            
+            <Picker x:Name="ResearchInterests" Title="Pick a Research Interests" SelectedIndexChanged="ResearchInterests_SelectedIndexChanged">
+                <Picker.Items>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Year Classification"/>
+
+            <Picker x:Name="Year" Title="Year Classification" SelectedIndexChanged="Year_SelectedIndexChanged">
+                <Picker.Items>
+                </Picker.Items>
+            </Picker>
+
+
+        </StackLayout>
+
     </ContentPage.Content>
 </ContentPage>

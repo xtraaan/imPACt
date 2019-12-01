@@ -13,6 +13,7 @@ namespace imPACt.Matching
 
             InitializeComponent();
             ClickedUser = user;
+            NavigationPage.SetHasNavigationBar(this, false);
         }
 
         protected override void OnAppearing()

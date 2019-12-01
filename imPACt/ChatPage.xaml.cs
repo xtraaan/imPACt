@@ -15,6 +15,7 @@ namespace imPACt
         public ChatPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
     }
 }

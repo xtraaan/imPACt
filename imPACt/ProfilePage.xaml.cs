@@ -15,6 +15,8 @@ namespace imPACt
         public  ProfilePage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
+
             //BindingContext = new ProfilePageViewModel();
             name.Text = App.currentUser.FirstName + " " + App.currentUser.LastName;
             researchInterests.Text = App.currentUser.ResearchInterest;

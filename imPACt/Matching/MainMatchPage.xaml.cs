@@ -10,6 +10,7 @@ namespace imPACt.Matching
         public MainMatchPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
     }
 }

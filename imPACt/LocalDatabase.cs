@@ -45,6 +45,11 @@ namespace imPACt
             return App.currentUser.Matches.ToList();
         }
 
+        public Task<int> UpdateUser()
+        {
+            return _database.UpdateAsync(App.currentUser);
+        }
+
         public Task<RegisterUserTable> QueryUserAsync(string username, string pass)
         {
             return _database.Table<RegisterUserTable>().Where(u => u.Username.Equals(username) && u.Password.Equals(pass)).FirstOrDefaultAsync();
