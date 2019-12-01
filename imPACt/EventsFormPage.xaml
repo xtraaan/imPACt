@@ -7,22 +7,48 @@
              mc:Ignorable="d" Title="EVENTS"
 
              x:Class="imPACt.EventsFormPage">
+    
     <ContentPage.Content>
+        <Grid>
 
-        <StackLayout VerticalOptions="StartAndExpand">
-            <Label Text="Event Name" />
-            <Entry x:Name="eventName" Placeholder="Event Name" />
-            <Label Text="Event Sponsor" />
-            <Entry x:Name="eventSponsor" Placeholder="Event Sponsor" />
-            <Label Text="Event Description" />
-            <Entry x:Name="eventDescription" Placeholder="Event Description" />
-            <Label Text="Event Date" />
-			<Entry x:Name="eventDate" Placeholder="Event Date" />
-            <!--<Label Text="Event Image" />
-			<Entry x:Name="emailEntry" />-->
-			<Button Text="Create Event" Clicked="OnCreateEventButtonClicked" />
-		</StackLayout>
-        
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
 
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TableView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" 
+                       Intent="Form" HasUnevenRows="true">
+
+                <TableSection Title="Event Name">
+                    <EntryCell x:Name="eventName" Label="" /> 
+                </TableSection>
+
+                <TableSection Title="Event Sponsor">
+                    <EntryCell x:Name="eventSponsor" Label="" /> 
+                </TableSection>
+
+                <!-- use date picker -->
+                <TableSection Title="Event Date">
+                    <EntryCell x:Name="eventDate" Label="" /> 
+                </TableSection>
+                
+                <TableSection Title="Description">
+                    <ViewCell>
+                        <StackLayout Padding="15">
+                            <Editor x:Name="eventDescription" />
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+                
+            </TableView>
+
+            <Button Text="Create" Grid.Row="1" Grid.Column="0" x:Name="createButton" BackgroundColor="#4CC7F2" TextColor="White" />
+            <Button Text="Cancel" Grid.Row="1" Grid.Column="1" x:Name="cancelButton" BackgroundColor="OrangeRed" TextColor="White" />
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
