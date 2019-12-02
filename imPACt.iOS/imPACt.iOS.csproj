@@ -114,8 +114,6 @@
     <ImageAsset Include="Assets.xcassets\impactlogo.png.imageset\impactlogo.png" />
     <ImageAsset Include="Assets.xcassets\baseline_list_alt_black_18dp.png.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\baseline_list_alt_black_18dp.png.imageset\baseline_list_alt_black_18dp.png" />
-    <ImageAsset Include="Assets.xcassets\nash.png.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\nash.png.imageset\nash.png" />
     <ImageAsset Include="Assets.xcassets\default.png.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\default.png.imageset\default.png" />
   </ItemGroup>
