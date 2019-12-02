@@ -19,7 +19,7 @@ namespace imPACt
 
         private async void CancelButton(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new EventsLayoutPage());
+            await Navigation.PushAsync(new AllEventsLayoutPage());
         }
     }
 }
