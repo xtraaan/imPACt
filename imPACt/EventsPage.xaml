@@ -3,5 +3,53 @@
              Title="Events"
              IconImageSource="baseline_list_alt_black_18dp.png"
              x:Class="imPACt.EventsPage">
-    
+
+    <ContentPage.Content>
+    <ScrollView>
+        <FlexLayout
+            AlignItems="Start"
+            AlignContent="Start"                   
+            Wrap="Wrap">
+
+            <Label Text="{Binding EventName}" HorizontalTextAlignment="Center" TextColor="Black"
+            FontAttributes="Bold" FontSize="Large" Margin="10, 20" />
+                   
+            <BoxView FlexLayout.Basis="100%" HeightRequest="0" />
+
+            <Label Text="Sponsor:" FontAttributes="Bold" FontSize="Medium" TextColor="Black"
+                   Margin="10,20" HorizontalOptions="FillAndExpand" />
+
+            <BoxView FlexLayout.Basis="100%" HeightRequest="0" />
+
+            <Label Text="{Binding EventSponsor}" Margin="10,10" FontSize="Small" />
+
+            <Label Text="Date:" FontAttributes="Bold" FontSize="Medium" TextColor="Black"
+                   Margin="10,17" HorizontalOptions="FillAndExpand" />
+
+            <BoxView FlexLayout.Basis="100%" HeightRequest="0" />
+
+            <Label Text="{Binding EventDate}" Margin="10,10" FontSize="Small" />
+
+
+            <BoxView FlexLayout.Basis="100%" HeightRequest="0" />
+            
+            <Label Text="Description:" FontAttributes="Bold" FontSize="Medium" TextColor="Black" 
+                   Margin="10,18" HorizontalOptions="FillAndExpand" />
+
+            <BoxView FlexLayout.Basis="100%" HeightRequest="0" />
+
+            <Label Text="{Binding EventDescription}" Margin="10,10" FontSize="Small" />
+
+            <Button Text="Update"  VerticalOptions="End" Clicked="UpdateButton" BackgroundColor="#3897F0"  TextColor="White" HeightRequest="50" WidthRequest="200"/>
+            <!--<Button Text="Invite Members"  VerticalOptions="End" Clicked="InviteMembersButton" BackgroundColor="OrangeRed"  TextColor="White" HeightRequest="50" WidthRequest="150"/>
+            -->
+        </FlexLayout>
+    </ScrollView>
+</ContentPage.Content>
+
+
+
+
+
+
 </ContentPage>
