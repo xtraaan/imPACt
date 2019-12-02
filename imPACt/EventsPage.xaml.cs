@@ -12,5 +12,15 @@ namespace imPACt
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
         }
+
+        private async void UpdateButton(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new EventsFormPage());
+        }
+
+        //private async void InviteMembersButton(object sender, EventArgs e)
+        //{
+        //    await Navigation.PushAsync(new EventsLayoutPage());
+        //}
     }
 }
