@@ -22,6 +22,8 @@ namespace imPACt.Tables
         public string School { get; set; }
         public string Location { get; set; }
         public string EventName { get; set; }
+        public string EventDate { get; set; }
+        public string EventSponsor { get; set; }
         public string EventDescription { get; set; }
 
         [OneToMany(CascadeOperations = CascadeOperation.All)]
