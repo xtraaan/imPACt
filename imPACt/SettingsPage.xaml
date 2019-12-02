@@ -40,6 +40,7 @@
                 </Picker.Items>
             </Picker>
 
+            <Button Text="LOGOUT" Clicked="Button_Clicked" HorizontalOptions="Center" VerticalOptions="Center" />
 
         </StackLayout>
 

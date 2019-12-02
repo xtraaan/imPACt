@@ -111,6 +111,12 @@ namespace imPACt
 
         }
 
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            Navigation.InsertPageBefore(new LoginPage(), Navigation.NavigationStack[0]);
+            await Navigation.PopToRootAsync();
+        }
+
         private IList<Research> GetResearchMethod()
         {
             return new List<Research>

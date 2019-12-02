@@ -17,7 +17,7 @@
                         HeightRequest="150">
                     
                         <StackLayout Orientation="Horizontal" HorizontalOptions="Start"  BackgroundColor="White"  >
-                    <Image Source="TEDTalk.png" HeightRequest="50" WidthRequest="100" BackgroundColor="#c8bfe7" Aspect="AspectFill"/>
+                            <Image Source="TEDTalk.png" HeightRequest="50" WidthRequest="100" BackgroundColor="#c8bfe7" Aspect="AspectFill"/>
                         <StackLayout Orientation="Vertical">
                             
                             <Label Text="TED Talk Machine Learning" FontSize="25" TextColor="Black"/>
