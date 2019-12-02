@@ -116,27 +116,27 @@ namespace imPACt.Login
         private IList<Majors> GetMajorMethod()
         {
             return new List<Majors>{
-                new Majors { MajorSel = "Accounting" },
 
-            new Majors { MajorSel = "Applied Mathematics" },
-            new Majors { MajorSel = "Architectural Engineering" },
-            new Majors { MajorSel = "Architecture" },
-            new Majors { MajorSel = "Biochemistry" },
-            new Majors { MajorSel = "Bioengineering" },
-            new Majors { MajorSel = "Biophysics" },
-            new Majors { MajorSel = "Chemical Engineering" },
-            new Majors { MajorSel = "Computer Science" },
-            new Majors { MajorSel = "Civil Engineering" },
-            new Majors { MajorSel = "Computer Engineering" },
-            new Majors { MajorSel = "Electrical Engineering" },
-            new Majors { MajorSel = "Engineering Science" },
-            new Majors { MajorSel = "Mechanical Engineering" },
-            new Majors { MajorSel = "Microbiology" },
-            new Majors { MajorSel = "Nuclear Engineering" },
-            
-           
+                    new Majors { MajorSel = "Applied Mathematics" },
+                    new Majors { MajorSel = "Architectural Engineering" },
+                    new Majors { MajorSel = "Bioengineering" },
+                    new Majors { MajorSel = "Biophysics" },
+                    new Majors { MajorSel = "Biochemistry" },
+                    new Majors { MajorSel = "Chemical Engineering" },
+                    new Majors { MajorSel = "Computer Science" },
+                    new Majors { MajorSel = "Civil Engineering" },
+                    new Majors { MajorSel = "Computer Engineering" },
+                    new Majors { MajorSel = "Electrical Engineering" },
+                    new Majors { MajorSel = "Engineering Science" },
+                    new Majors { MajorSel = "Math" },
+                    new Majors { MajorSel = "Mechanical Engineering" },
+                    new Majors { MajorSel = "Nuclear Engineering" },
+                    new Majors { MajorSel = "Physics" },
+
+
+
             };
-           
+
         }
 
         private IList<Research> GetResearchMethod()
@@ -147,6 +147,10 @@ namespace imPACt.Login
                 new Research { ResearchSel = "Machine Learning"},
                 new Research { ResearchSel = "Game Design"},
                 new Research { ResearchSel = "That one thing"},
+                new Research { ResearchSel = "Virtual Reality"},
+                new Research { ResearchSel = "Data Analytics"},
+                new Research { ResearchSel = "Computer Networks"},
+
             };
         }
 
@@ -155,11 +159,11 @@ namespace imPACt.Login
             return new List<Years>
             {
                 new Years { YearSel = "Freshman"},
-                new Years { YearSel = "Sophmore"},
+                new Years { YearSel = "Sophomore"},
                 new Years { YearSel = "Junior"},
                 new Years { YearSel = "Senior"},
                 new Years { YearSel = "Graduate"},
-                new Years { YearSel = "Ph.d"},
+                new Years { YearSel = "Ph.D"},
                 new Years { YearSel = "Professor"},
             };
         }
