@@ -18,10 +18,10 @@
             BarTextColor="Black"
             
             >
-
+    <local1:MatchPage  ></local1:MatchPage>
     <local:AllEventsLayoutPage></local:AllEventsLayoutPage>
     <local:ChatPage  ></local:ChatPage>
-    <local1:MatchPage  ></local1:MatchPage>
+    
     <local:ProfilePage ></local:ProfilePage>
     
     
