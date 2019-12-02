@@ -1,15 +1,71 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:imPACt"
              IconImageSource="baseline_list_alt_black_18dp.png"
              x:Class="imPACt.AllEventsLayoutPage">
-    <ContentPage.Content>
-        <ScrollView>
 
-        <Button Text="Create an Event"  VerticalOptions="Center" Clicked="CreateButton" BackgroundColor="#3897F0"  TextColor="White" HeightRequest="50" WidthRequest="150"/>
-        <!--<Button Text="Invite Members"  VerticalOptions="End" Clicked="InviteMembersButton" BackgroundColor="OrangeRed"  TextColor="White" HeightRequest="50" WidthRequest="150"/>
+
+
+    <ContentPage.BindingContext>
+        <local:EventsModel/>
+    </ContentPage.BindingContext>
+
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="ToolbarItem_Clicked"></ToolbarItem>
+    </ContentPage.ToolbarItems>-->
+
+    <ContentPage.Content>
+       <StackLayout>
+
+        <ListView ItemsSource="{Binding ImpactEvents}" SelectedItem="{Binding SelectedImpactEvent}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <!--<Image Source="{Binding PictureUrl}"></Image>-->
+                            <Label Text="{Binding EventName}"
+                                   FontSize="Medium"
+                                   FontAttributes="Bold"
+                                   Grid.Column="0"
+                                   VerticalTextAlignment="Start"
+                                   Margin="0, 10"
+                                   ></Label>
+                            <Label Text="{Binding Sponsor}"
+                                   Grid.Column="0"
+                                   VerticalTextAlignment="End"
+                                   Margin="0, -3"
+                                   ></Label>
+
+                            <Image Source= "icon.png" Grid.Column="1">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Tapped="TapGestureRecognizer_Tapped_Edit"
+                                        CommandParameter="{Binding ImpactEventId}"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+                            <Image Source= "settingBtn.png" Grid.Column="1">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Tapped="TapGestureRecognizer_Tapped_Remove"
+                                        CommandParameter="{Binding ImpactEventId}"/>
+                                </Image.GestureRecognizers>
+                            </Image>
+
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        <!--<Button Text="Create an Event"  VerticalOptions="Center" Clicked="CreateButton" BackgroundColor="#3897F0"  TextColor="White" HeightRequest="50" WidthRequest="150"/>
+        <Button Text="Invite Members"  VerticalOptions="End" Clicked="InviteMembersButton" BackgroundColor="OrangeRed"  TextColor="White" HeightRequest="50" WidthRequest="150"/>
         -->
+        </ListView>
+
+        <ScrollView>
+            <Button Text="Create an Event"  VerticalOptions="Center" Clicked="ToolbarItem_Clicked" BackgroundColor="#3897F0"  TextColor="White" HeightRequest="50" WidthRequest="150"/>
         </ScrollView>
+       </StackLayout>
     </ContentPage.Content>
 </ContentPage>
 
