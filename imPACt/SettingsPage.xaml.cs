@@ -20,6 +20,8 @@ namespace imPACt
                 Year.Items.Add(method.YearSel);
         }
 
+        
+
         private void Picker_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -44,13 +46,23 @@ namespace imPACt
 
         private async void ToolbarItem_Activated(object sender, EventArgs e)
         {
-            App.currentUser.FirstName = FirstnameEntry.Text;
-            App.currentUser.LastName = LastnameEntry.Text;
-            App.currentUser.Major = Mjr;
-            App.currentUser.Year = Yr;
-            App.currentUser.FirstName = RsrchInt;
+            if(!string.IsNullOrWhiteSpace(FirstnameEntry.Text))
+                App.currentUser.FirstName = FirstnameEntry.Text;
+
+            if (!string.IsNullOrWhiteSpace(LastnameEntry.Text))
+                App.currentUser.LastName = LastnameEntry.Text;
+
+            if (!string.IsNullOrWhiteSpace(Yr))
+                App.currentUser.Year = Yr;
+
+            if (!string.IsNullOrWhiteSpace(Mjr))
+                App.currentUser.Major = Mjr;
+
+            if (!string.IsNullOrWhiteSpace(RsrchInt))
+                App.currentUser.ResearchInterest = RsrchInt;
 
             await App.Database.UpdateUser();
+
             await DisplayAlert("Saved", "Settings Saved", "Ok");
 
         }

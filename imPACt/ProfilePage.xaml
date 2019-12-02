@@ -22,7 +22,9 @@
                         Margin="5"
                         HorizontalOptions="End"
                         WidthRequest="60"
-                        VerticalOptions="Fill" />
+                        VerticalOptions="Fill" 
+                             BackgroundColor="White"
+                        Clicked="ImageButton_Clicked"/>
 
                 <StackLayout x:Name="TopOfProfilePageLayout">
 

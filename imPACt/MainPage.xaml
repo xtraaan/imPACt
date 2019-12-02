@@ -13,7 +13,7 @@
             x:Class="imPACt.MainPage"
             x:Name="Tabbed"
             
-            BarBackgroundColor="#3897F0"
+            BarBackgroundColor="#c8bfe7"
            
             BarTextColor="Black"
             

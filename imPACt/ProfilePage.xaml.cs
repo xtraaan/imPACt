@@ -25,5 +25,22 @@ namespace imPACt
             school.Text = "  " + App.currentUser.School;
 
         }
+
+        public void OnAppearing()
+        {
+            base.OnAppearing();
+
+            name.Text = "  " + App.currentUser.FirstName + " " + App.currentUser.LastName;
+            researchInterests.Text = "  " + App.currentUser.ResearchInterest;
+            major.Text = "  " + App.currentUser.Major;
+            gradeYear.Text = "  " + App.currentUser.Year;
+            school.Text = "  " + App.currentUser.School;
+
+        }
+
+        private async void ImageButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new SettingsPage());
+        }
     }
 }
