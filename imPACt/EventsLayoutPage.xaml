@@ -1,7 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             IconImageSource="baseline_list_alt_black_18dp.png"
              x:Class="imPACt.EventsLayoutPage">
     <ContentPage.Content>
+        <ScrollView>
+
+        <Button Text="Create an Event"  VerticalOptions="Center" Clicked="CreateButton" BackgroundColor="#3897F0"  TextColor="White" HeightRequest="50" WidthRequest="150"/>
+        <!--<Button Text="Invite Members"  VerticalOptions="End" Clicked="InviteMembersButton" BackgroundColor="OrangeRed"  TextColor="White" HeightRequest="50" WidthRequest="150"/>
+        -->
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
