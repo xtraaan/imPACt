@@ -100,12 +100,20 @@
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\Profile.jpg.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Profile.jpg.imageset\Profile.jpg" />
-    <ImageAsset Include="Assets.xcassets\unnamed.png.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\unnamed.png.imageset\unnamed.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon copy.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon copy-1.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon copy-2.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_person_black_18dp.png.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\baseline_person_black_18dp.png.imageset\baseline_person_black_18dp.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_view_carousel_black_18dp.png.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\baseline_view_carousel_black_18dp.png.imageset\baseline_view_carousel_black_18dp.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_chat_bubble_black_18dp.png.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\baseline_chat_bubble_black_18dp.png.imageset\baseline_chat_bubble_black_18dp.png" />
+    <ImageAsset Include="Assets.xcassets\impactlogo.png.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\impactlogo.png.imageset\impactlogo.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_list_alt_black_18dp.png.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\baseline_list_alt_black_18dp.png.imageset\baseline_list_alt_black_18dp.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -140,6 +148,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets.xcassets\Profile.jpg.imageset\" />
-    <Folder Include="Assets.xcassets\unnamed.png.imageset\" />
+    <Folder Include="Assets.xcassets\impactlogo.png.imageset\" />
+    <Folder Include="Assets.xcassets\baseline_person_black_18dp.png.imageset\" />
+    <Folder Include="Assets.xcassets\baseline_view_carousel_black_18dp.png.imageset\" />
+    <Folder Include="Assets.xcassets\baseline_chat_bubble_black_18dp.png.imageset\" />
+    <Folder Include="Assets.xcassets\impactlogo.png.imageset\" />
+    <Folder Include="Assets.xcassets\baseline_list_alt_black_18dp.png.imageset\" />
   </ItemGroup>
 </Project>
