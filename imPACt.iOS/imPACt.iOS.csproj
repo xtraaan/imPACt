@@ -116,6 +116,8 @@
     <ImageAsset Include="Assets.xcassets\baseline_list_alt_black_18dp.png.imageset\baseline_list_alt_black_18dp.png" />
     <ImageAsset Include="Assets.xcassets\default.png.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\default.png.imageset\default.png" />
+    <ImageAsset Include="Assets.xcassets\matchtitle.png.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\matchtitle.png.imageset\matchtitle.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -158,5 +160,8 @@
     <Folder Include="Assets.xcassets\baseline_list_alt_black_18dp.png.imageset\" />
     <Folder Include="Assets.xcassets\nash.png.imageset\" />
     <Folder Include="Assets.xcassets\default.png.imageset\" />
+    <Folder Include="Assets.xcassets\impact.png.imageset\" />
+    <Folder Include="Assets.xcassets\matchtitle.png.imageset\" />
+    <Folder Include="Assets.xcassets\matchtitle.png.imageset\" />
   </ItemGroup>
 </Project>
