@@ -19,7 +19,7 @@
             
             >
 
-    <local:EventsPage></local:EventsPage>
+    <local:EventsLayoutPage></local:EventsLayoutPage>
     <local:ChatPage  ></local:ChatPage>
     <local1:MatchPage  ></local1:MatchPage>
     <local:ProfilePage ></local:ProfilePage>
