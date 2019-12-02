@@ -118,6 +118,8 @@
     <ImageAsset Include="Assets.xcassets\default.png.imageset\default.png" />
     <ImageAsset Include="Assets.xcassets\matchtitle.png.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\matchtitle.png.imageset\matchtitle.png" />
+    <ImageAsset Include="Assets.xcassets\impact.png.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\impact.png.imageset\impact.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -163,5 +165,6 @@
     <Folder Include="Assets.xcassets\impact.png.imageset\" />
     <Folder Include="Assets.xcassets\matchtitle.png.imageset\" />
     <Folder Include="Assets.xcassets\matchtitle.png.imageset\" />
+    <Folder Include="Assets.xcassets\impact.png.imageset\" />
   </ItemGroup>
 </Project>

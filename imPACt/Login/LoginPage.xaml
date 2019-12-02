@@ -15,8 +15,9 @@
 
         <Grid Grid.Row="1" Margin="20,0,20,0" BackgroundColor="White">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="50"/>
+
+                <RowDefinition Height="140"/>
+                <RowDefinition Height="70"/>
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="60"/>
@@ -29,9 +30,9 @@
 
             <!-- <Label Text="imPACt" FontAttributes="Italic" HorizontalOptions="Center" TextColor="Yellow" FontSize="Header" FontFamily="Lobster-Regular"/> -->
             <!--  <Label Grid.Row="0" Text="imPACt" HorizontalOptions="Center" VerticalOptions="Center" FontSize="75" />-->
-            <Image Grid.Row="0" Source="impactlogo.png" HorizontalOptions="Center"/>
+            <Image Grid.Row="0" Source="impactlogo.png" HorizontalOptions="Center" Margin="0,20,0,0"/>
 
-            <Image Source="impact.png" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Image Source="impact.png" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,10" />
 
             <Entry Grid.Row="2" x:Name="usernameEntry" Placeholder="username" PlaceholderColor="#bababa" FontSize="16"/>
 
