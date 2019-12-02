@@ -21,7 +21,7 @@
 
     <local:EventsPage></local:EventsPage>
     <local:ChatPage  ></local:ChatPage>
-    <local1:MainMatchPage  ></local1:MainMatchPage>
+    <local1:MatchPage  ></local1:MatchPage>
     <local:ProfilePage ></local:ProfilePage>
     
     
