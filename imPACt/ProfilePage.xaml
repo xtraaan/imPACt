@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:renderers="clr-namespace:imPACt"
              mc:Ignorable="d"
              x:Class="imPACt.ProfilePage"
              Title="Profile"
@@ -11,157 +10,92 @@
 
     <ContentPage.Content>
 
-        <Frame VerticalOptions="FillAndExpand"
-               Padding="10"
-               BorderColor="#48485e"
-               HasShadow="False">
+        <StackLayout BackgroundColor="White">
 
-            <StackLayout x:Name="ProfileMasterLayout" BackgroundColor="White">
+            <Grid>
 
-                <ImageButton Source="settingBtn.png"
-                        Margin="5"
-                        HorizontalOptions="End"
-                        WidthRequest="60"
-                        VerticalOptions="Fill" 
-                             BackgroundColor="White"
-                        Clicked="ImageButton_Clicked"/>
+                <Grid.RowDefinitions>
 
-                <StackLayout x:Name="TopOfProfilePageLayout">
+                    <RowDefinition Height="220" />
 
-                    <StackLayout.Padding>
+                </Grid.RowDefinitions>
 
-                        <OnIdiom x:TypeArguments="Thickness"
-                                     Phone="40,0,40,0" 
-                                     Tablet="140,100,140,100">
-                        </OnIdiom>
+                <Image Source="abstractBackground.jpg"
+                       Aspect="Fill"
+                       HeightRequest="260"
+                       VerticalOptions="StartAndExpand" />
 
-                    </StackLayout.Padding>
+                <ImageButton Source="setting.png"
+                        Margin="10"
+                        VerticalOptions="Start"
+                        BackgroundColor="#dcd0ff"
+                        HorizontalOptions="End"/>
 
-                    <StackLayout Orientation="Horizontal"  HeightRequest="120">
+                <StackLayout VerticalOptions="CenterAndExpand">
 
-                        <Image x:Name="profilePicDefault" 
-                                       Source="userDefaultPict.png" 
-                                       WidthRequest="120" 
-                                       Aspect="Fill" 
-                                       HorizontalOptions="CenterAndExpand"/>
-
-                    </StackLayout>
-
-                    <Label x:Name="name" 
-                               Text="   Name   " 
-                               FontAttributes="Bold" 
-                               FontSize="26" 
-                               TextColor="#48485e"
-                               VerticalOptions="Center"
-                               HorizontalOptions="CenterAndExpand"/>
+                    <Image Source="userDefaultPict.png"
+                        HeightRequest="70"
+                        Margin="0,20,0,0"/>
 
                 </StackLayout>
 
-                <StackLayout x:Name="ProfileUserLayout" 
-                             VerticalOptions="StartAndExpand">
+            </Grid>
 
-                    <StackLayout.Padding>
-                        <OnIdiom x:TypeArguments="Thickness"
-                                 Phone="40,20,40,0" 
-                                 Tablet="140,100,140,100">
-                        </OnIdiom>
-                    </StackLayout.Padding>
+            <StackLayout x:Name="UserInfoLayout" 
+                     VerticalOptions="Start"
+                     HorizontalOptions="Fill" 
+                     Margin="30,0,10,0">
 
-                    <Frame VerticalOptions="FillAndExpand"
-                           Padding="10"
-                           BorderColor="#48485e"
-                           HasShadow="False">
+                <Label x:Name="name"
+                       TextColor="Black"
+                       FontSize="30"
+                       Margin="-30,10,-10,10"
+                       TextDecorations="Underline"
+                       HorizontalOptions="Center"/>
 
-                        <StackLayout x:Name="UserInfoLayout" 
-                                         HorizontalOptions="FillAndExpand" Margin="10">
+                <Label FontSize="20" 
+                   Text="Current Education Level:" 
+                   TextColor="Black"/>
 
-                            <Label FontSize="20" 
-                                       Text="Current Education Level:" 
-                                       Margin="5"
-                                       TextDecorations="Underline"
-                                       FontAttributes="Bold"
-                                       TextColor="#48485e"/>
+                <Frame HasShadow="False" Margin="-55,0,0,0" Scale=".75"  BorderColor="Black">
+                    <Label x:Name="gradeYear" 
+                        TextColor="Black" 
+                        FontSize="20"/>
+                </Frame>
 
-                            <Label x:Name="gradeYear" 
-                                        TextColor="#48485e" 
-                                        FontSize="20"/>
+                <Label FontSize="20" 
+                   Text="Major:" 
+                   TextColor="Black" />
 
-                            <Label FontSize="20" 
-                                        Text="Research Interests:" 
-                                        Margin="5"
-                                        TextDecorations="Underline"
-                                        FontAttributes="Bold"
-                                        TextColor="#48485e" />
+                <Frame HasShadow="False" Margin="-55,0,0,0" Scale=".75"  BorderColor="Black">
+                    <Label x:Name="major" 
+                            TextColor="Black" 
+                            FontSize="20" />
+                </Frame>
 
-                            <Label x:Name="researchInterests"
-                                        TextColor="#48485e"
-                                        FontSize="20" />
+                <Label FontSize="20" 
+                   Text="Research Interests:" 
+                   TextColor="Black" />
 
-                            <Label FontSize="20" 
-                                        Text="Major:" 
-                                        Margin="5"
-                                        TextDecorations="Underline"
-                                        FontAttributes="Bold"
-                                        TextColor="#48485e" />
+                <Frame HasShadow="False" Margin="-55,0,0,0" Scale=".75"  BorderColor="Black">
+                    <Label x:Name="researchInterests"
+                            TextColor="Black"
+                            FontSize="20" />
+                </Frame>
 
-                            <Label x:Name="major" 
-                                        TextColor="#48485e" 
-                                        FontSize="20" />
+                <Label FontSize="20" 
+                   Text="Institution:" 
+                   TextColor="Black" />
 
-                            <Label FontSize="20" 
-                                        Margin="5"
-                                        Text="Institution:" 
-                                        TextDecorations="Underline"
-                                        FontAttributes="Bold"
-                                        TextColor="#48485e" />
-
-                            <Label x:Name="school"
-                                        TextColor="#48485e"
-                                        FontSize="20" />
-
-                        </StackLayout>
-
-                    </Frame>
-
-                </StackLayout>
-
-                <!--<StackLayout Orientation="Horizontal"  HeightRequest="70" Grid.Column="0">
-                    <Image x:Name="logoRepeat" 
-                           Source="impactRepeat.png" 
-                           WidthRequest="413" 
-                           Aspect="Fill" />
-                </StackLayout>-->
-
-                <!--<StackLayout x:Name="UserConnectionsLayout" 
-                         VerticalOptions="CenterAndExpand"
-                         BackgroundColor="#48485e">
-
-                    <StackLayout.Padding>
-                        <OnIdiom x:TypeArguments="Thickness"
-                             Phone="40,10,40,60" 
-                             Tablet="140,100,140,100">
-                        </OnIdiom>
-                    </StackLayout.Padding>
-
-                    -->
-                <!--<Label FontSize="20" 
-                           Text=" My Connections: " 
-                           TextDecorations="Underline"
-                           HorizontalOptions="CenterAndExpand"
-                           TextColor="GhostWhite" />-->
-
-                <!--<Button Text="Connect With Me" 
-                        FontAttributes="Bold"
-                        BackgroundColor="GhostWhite"
-                        TextColor="#48485e"
-                        Margin="20"/>-->
-                <!--
-
-                </StackLayout>-->
+                <Frame HasShadow="False" Margin="-55,0,0,0" Scale=".75"  BorderColor="Black">
+                    <Label x:Name="school"
+                            TextColor="Black"
+                            FontSize="20" />
+                </Frame>
 
             </StackLayout>
 
-        </Frame>
+        </StackLayout>
 
         <!--#49425E-->
 
