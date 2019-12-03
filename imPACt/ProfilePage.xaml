@@ -230,7 +230,7 @@
                          
                             </Frame>
                             
-                            <Label x:Name="FullName" Text="{Binding FullName}" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Large" />
+                            <Label x:Name="FullName" Text="{Binding FullName}" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Medium" />
 
                             
                         </Grid>

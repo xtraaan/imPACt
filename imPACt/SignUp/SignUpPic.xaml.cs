@@ -66,10 +66,10 @@ namespace imPACt.SignUp
                 Navigation.InsertPageBefore(new MainPage(), Navigation.NavigationStack.First());
                 await Navigation.PopToRootAsync();
             }
-            else
-            {
-                await DisplayAlert("No Photo", "Upload Photo", "Ok");
-            }
+            //else
+            //{
+            //    await DisplayAlert("No Photo", "Upload Photo", "Ok");
+            //}
 
             
         }
