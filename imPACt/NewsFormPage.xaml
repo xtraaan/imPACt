@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="imPACt.NewsFormPage">
+    <ContentPage.Content>
+
+        <StackLayout VerticalOptions="StartAndExpand" Margin="20,0,20,0" BackgroundColor="White">
+        
+            <Label Text="Article Name"
+                   TextColor="Black"/>
+            <Entry x:Name="newsName"
+                   Placeholder=""/>
+
+            <Label Text="Author" />
+            <Entry x:Name="newsAuthor"
+                   TextColor="Black"
+                   Placeholder=""
+                   FontSize="16"/> 
+            <!--
+            <Label Text="News Date" />
+            <Entry x:Name="newsDate"
+                   TextColor="Black"
+                   Placeholder="News Date"
+                   FontSize="16" />-->
+
+            <Label Text="Description" />
+            <Entry x:Name="newsDescription"
+                   TextColor="Black"
+                   Placeholder=""
+                   FontSize="16"
+                   HeightRequest="270"/> 
+            
+
+            <Button Text="Create"
+                    VerticalOptions="End"
+                    Clicked="CreateButton"
+                    BackgroundColor="#3897F0"
+                    TextColor="White"
+                    HeightRequest="50"
+                    WidthRequest="150"/>
+
+            <Button Text="Cancel"
+                    VerticalOptions="End"
+                    Clicked="CancelButton"
+                    BackgroundColor="OrangeRed"
+                    TextColor="White"
+                    HeightRequest="50"
+                    WidthRequest="150"/>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
