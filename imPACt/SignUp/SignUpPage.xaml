@@ -10,23 +10,55 @@
     </ContentPage.Padding>
 
     <ContentPage.Content BackgroundColor="White">
-        <StackLayout VerticalOptions="StartAndExpand" Margin="20,0,20,0">
 
-            
-            <Label Text="Username" />
-			<Entry x:Name="usernameEntry" Placeholder="username" />
-			<Label Text="Password" />
-			<Entry x:Name="passwordEntry" IsPassword="true" Placeholder="password"/>
-            <Label Text="Re-Enter Password" />
-            <Entry x:Name="RepasswordEntry" IsPassword="true" Placeholder="re-enter password"/>
-            <Label Text="Email address" />
-			<Entry x:Name="emailEntry" Placeholder="Email Address"/>
-            <Button Text="Next" Clicked="OnSignUpButtonClicked" BackgroundColor="#3897F0" TextColor="White" />
+        <StackLayout VerticalOptions="StartAndExpand" Margin="10,20,10,0">
 
-            
-            
-            
-			
-		</StackLayout>
-	</ContentPage.Content>
+            <Label Text="Welcome to ImPACt!" 
+                   TextColor="#49425E" 
+                   HorizontalOptions="CenterAndExpand" 
+                   FontSize="30"
+                   Margin="0,0,0,10+"/>
+
+            <Frame BorderColor="#49425E">
+
+
+                <StackLayout Margin="10,10,10,10">
+
+
+                    <Label Text="Username:" TextColor="#49425E" />
+                    
+			        <Entry x:Name="usernameEntry"
+                           Placeholder="username" />
+                    
+                    <Label Text="Password:" 
+                           TextColor="#49425E"/>
+			        <Entry x:Name="passwordEntry" 
+                           IsPassword="true" 
+                           Placeholder="password"/>
+                    
+                    <Label Text="Re-Enter Password:" 
+                           TextColor="#49425E"/>
+                    
+                    <Entry x:Name="RepasswordEntry" 
+                           IsPassword="true" 
+                           Placeholder="re-enter password"/>
+                    
+                    <Label Text="Email address:" 
+                           TextColor="#49425E"/>
+                    
+			        <Entry x:Name="emailEntry" 
+                           Placeholder="Email Address"/>
+                    
+                    <Button Text="Next" 
+                            Clicked="OnSignUpButtonClicked" 
+                            BackgroundColor="#49425E" 
+                            TextColor="White" />
+
+                </StackLayout>
+
+            </Frame>
+
+        </StackLayout>
+
+    </ContentPage.Content>
 </ContentPage>
