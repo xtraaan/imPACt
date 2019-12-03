@@ -2,6 +2,8 @@
 using SQLiteNetExtensions.Attributes;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using Xamarin.Forms;
 
 namespace imPACt.Tables
 {
@@ -34,6 +36,7 @@ namespace imPACt.Tables
 
         }
 
+        public byte[] ImageBytes { get; set; }
     }
 
     public class Events
@@ -42,5 +45,22 @@ namespace imPACt.Tables
         public string Description { get; set; }
         public string Title { get; set; }
         public string Owner { get; set; }
+        public byte[] ImageBytes { get; set; }
+
+        [Ignore]
+        public ImageSource ImageSource
+        {
+            get
+            {
+                ImageSource retval = null;
+                if (ImageBytes != null)
+                {
+                    retval = ImageSource.FromStream(() => new MemoryStream(ImageBytes));
+                }
+                return retval;
+            }
+        }
+
+
     }
 }

@@ -21,14 +21,14 @@
                     <DataTemplate>
                         <ViewCell>
                             <Frame CornerRadius="20" 
-                        OutlineColor="Black" 
+                        
                         Padding="0"
                         Margin="20"
                         IsClippedToBounds="True"
                         HeightRequest="150">
 
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="Start"  BackgroundColor="White"  >
-                                    <Image Source="TEDTalk.png" HeightRequest="50" WidthRequest="100" BackgroundColor="#c8bfe7" Aspect="AspectFill"/>
+                                    <Image Source="{Binding ImageSource}" HeightRequest="50" WidthRequest="100" BackgroundColor="#c8bfe7" Aspect="AspectFill"/>
                                     <StackLayout Orientation="Vertical">
 
                                         <Label Text="{Binding Title}" FontSize="25" TextColor="Black"/>
