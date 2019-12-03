@@ -19,44 +19,40 @@
                    FontSize="30"
                    Margin="0,0,0,10+"/>
 
-            <Frame BorderColor="#49425E">
+
+            <StackLayout Margin="10,10,10,10">
 
 
-                <StackLayout Margin="10,10,10,10">
+                <Label Text="Username:" TextColor="Black" />
 
-
-                    <Label Text="Username:" TextColor="#49425E" />
-                    
-			        <Entry x:Name="usernameEntry"
+                <Entry x:Name="usernameEntry"
                            Placeholder="username" />
-                    
-                    <Label Text="Password:" 
-                           TextColor="#49425E"/>
-			        <Entry x:Name="passwordEntry" 
+
+                <Label Text="Password:" 
+                           TextColor="Black"/>
+                <Entry x:Name="passwordEntry" 
                            IsPassword="true" 
                            Placeholder="password"/>
-                    
-                    <Label Text="Re-Enter Password:" 
-                           TextColor="#49425E"/>
-                    
-                    <Entry x:Name="RepasswordEntry" 
+
+                <Label Text="Re-Enter Password:" 
+                           TextColor="Black"/>
+
+                <Entry x:Name="RepasswordEntry" 
                            IsPassword="true" 
                            Placeholder="re-enter password"/>
-                    
-                    <Label Text="Email address:" 
-                           TextColor="#49425E"/>
-                    
-			        <Entry x:Name="emailEntry" 
+
+                <Label Text="Email address:" 
+                           TextColor="Black"/>
+
+                <Entry x:Name="emailEntry" 
                            Placeholder="Email Address"/>
-                    
-                    <Button Text="Next" 
+
+                <Button Text="Next" 
                             Clicked="OnSignUpButtonClicked" 
                             BackgroundColor="#49425E" 
                             TextColor="White" />
 
-                </StackLayout>
-
-            </Frame>
+            </StackLayout>
 
         </StackLayout>
 
