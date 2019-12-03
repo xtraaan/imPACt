@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using imPACt;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using imPACt.SignUp;
 
 namespace imPACt.Login
 {
@@ -76,10 +77,10 @@ namespace imPACt.Login
             NewUser.LastName = LastnameEntry.Text;
 
 
-            await App.Database.SaveUserAsync(NewUser);
+           // await App.Database.SaveUserAsync(NewUser);
             
 
-            App.currentUser = await App.Database.GetUserAsync(NewUser.UserId);
+            //App.currentUser = await App.Database.GetUserAsync(NewUser.UserId);
 
             /*string mystring = $"{App.currentUser.UserId}\n{App.currentUser.Username}\n{App.currentUser.Email}\n" +
                 $"{App.currentUser.Password}\n{App.currentUser.Major}\n{App.currentUser.Year}\n{App.currentUser.ResearchInterest}";
@@ -89,9 +90,10 @@ namespace imPACt.Login
             var rootPage = Navigation.NavigationStack.FirstOrDefault();
             if (rootPage != null)
             {
-                App.IsUserLoggedIn = true;
-                Navigation.InsertPageBefore(new MainPage(), Navigation.NavigationStack.First());
-                await Navigation.PopToRootAsync();
+                await Navigation.PushAsync(new SignUpPic(NewUser));
+
+                /*Navigation.InsertPageBefore(new MainPage(), Navigation.NavigationStack.First());
+                await Navigation.PopToRootAsync();*/
             }
         }
 

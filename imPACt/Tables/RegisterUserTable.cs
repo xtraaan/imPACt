@@ -37,6 +37,20 @@ namespace imPACt.Tables
         }
 
         public byte[] ImageBytes { get; set; }
+
+        [Ignore]
+        public ImageSource ImageSource
+        {
+            get
+            {
+                ImageSource retval = null;
+                if (ImageBytes != null)
+                {
+                    retval = ImageSource.FromStream(() => new MemoryStream(ImageBytes));
+                }
+                return retval;
+            }
+        }
     }
 
     public class Events
