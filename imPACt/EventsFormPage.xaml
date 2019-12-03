@@ -4,7 +4,7 @@
              BackgroundColor="White"
              x:Class="imPACt.EventsFormPage">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="StartAndExpand" Margin="20,0,20,0" BackgroundColor="White">
+        <StackLayout VerticalOptions="StartAndExpand" Margin="30,15,30,15" BackgroundColor="White">
         
             <Label Text="Event Name" TextColor="Black"/>
             <Entry x:Name="eventName" Placeholder="Event Name " />
@@ -17,7 +17,7 @@
 
             <Label Text="Event Picture"/>
             
-            <Button x:Name="pickPhoto" Text="Pick Photo"/>
+            <Button x:Name="pickPhoto" Text="Upload Photo"/>
             <Image x:Name="image"/>
 
             <Button Text="Create"  VerticalOptions="End" Clicked="CreateButton" BackgroundColor="#3897F0" TextColor="White" HeightRequest="50" WidthRequest="150"/>

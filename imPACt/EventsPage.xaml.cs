@@ -10,7 +10,7 @@ namespace imPACt
         public EventsPage()
         {
             InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this, false);
+            //NavigationPage.SetHasNavigationBar(this, false);
         }
 
         private async void UpdateButton(object sender, EventArgs e)

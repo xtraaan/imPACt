@@ -45,7 +45,7 @@
                            TextColor="Black"/>
 
                 <Entry x:Name="emailEntry" 
-                           Placeholder="Email Address"/>
+                           Placeholder="email address"/>
 
                 <Button Text="Next" 
                             Clicked="OnSignUpButtonClicked" 

@@ -40,7 +40,7 @@ namespace imPACt.Matching
 
             await App.Database.SaveFriendAsync(friend);
             
-            await DisplayAlert("Match Added", "Return to Matches", "Okay");
+            await DisplayAlert("Matched!", "Return to Matches", "Okay");
             await this.Navigation.PopAsync();
 
         }

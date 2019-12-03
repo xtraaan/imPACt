@@ -12,38 +12,42 @@
 
     <ContentPage.Content>
         
-        <StackLayout VerticalOptions="StartAndExpand" Margin="20,0,20,0" BackgroundColor="White">
+        <StackLayout VerticalOptions="StartAndExpand" Margin="30,15,30,15" BackgroundColor="White">
 
             <Label Text="First Name" TextColor="Black"/>
 
-            <Entry x:Name="FirstnameEntry" Placeholder="First Name " />
+            <Entry x:Name="FirstnameEntry" Placeholder="first name" />
 
             <Label Text="Last Name" />
 
-            <Entry x:Name="LastnameEntry" TextColor="Black" Placeholder="Last Name" FontSize="16" />
+            <Entry x:Name="LastnameEntry" TextColor="Black" Placeholder="last name" FontSize="16" />
 
             <Label Text="Major"/>
 
-            <Picker x:Name="Major" Title="Select a Major" SelectedIndexChanged="Picker_SelectedIndexChanged">
+            <Picker x:Name="Major" Title="select major" SelectedIndexChanged="Picker_SelectedIndexChanged">
                 <Picker.Items>
                 </Picker.Items>
             </Picker>
 
             <Label  Text="Research Interests"/>
             
-            <Picker x:Name="ResearchInterests" Title="Pick a Research Interests" SelectedIndexChanged="ResearchInterests_SelectedIndexChanged">
+            <Picker x:Name="ResearchInterests" Title="pick your research interest" SelectedIndexChanged="ResearchInterests_SelectedIndexChanged">
                 <Picker.Items>
                 </Picker.Items>
             </Picker>
 
             <Label Text="Year Classification"/>
 
-            <Picker x:Name="Year" Title="Year Classification" SelectedIndexChanged="Year_SelectedIndexChanged">
+            <Picker x:Name="Year" Title="year classification" SelectedIndexChanged="Year_SelectedIndexChanged">
                 <Picker.Items>
                 </Picker.Items>
             </Picker>
 
-            <Button Text="LOGOUT" Clicked="Button_Clicked" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Button Text="LOGOUT" 
+                            Clicked="Button_Clicked" 
+                            BackgroundColor="OrangeRed" 
+                            TextColor="White"
+                    Margin="50,10,50,0"/>
 
         </StackLayout>
 

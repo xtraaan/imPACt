@@ -28,6 +28,7 @@
             
                 <!-- This will be a LIST VIEW of a Item template of all events
                           This is just an example to work with the view first -->
+            <StackLayout Margin="0">
             <ListView
             x:Name="listView"
             Margin="0,8,0,0"
@@ -42,13 +43,14 @@
                         Padding="0"
                         Margin="5"
                         IsClippedToBounds="True"
-                        HeightRequest="150">
+                        HeightRequest="125"
+                                   HorizontalOptions="Center">
 
-                                <StackLayout Orientation="Horizontal" HorizontalOptions="Start"  BackgroundColor="White"  >
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand"  BackgroundColor="WhiteSmoke"  >
                                     <Image Source="{Binding ImageSource}" HeightRequest="50" WidthRequest="100" BackgroundColor="#c8bfe7" Aspect="AspectFill"/>
                                     <StackLayout Orientation="Vertical">
 
-                                        <Label Text="{Binding Title}" FontSize="25" TextColor="Black"/>
+                                        <Label Text="{Binding Title}" FontSize="25" TextColor="Black" WidthRequest="500"/>
                                         <Label Text="{Binding Description}" FontSize="16" TextColor="Black"/>
 
                                     </StackLayout>
@@ -63,6 +65,7 @@
                 </ListView.ItemTemplate>
             </ListView>
             <ImageButton Clicked="ImageButton_Clicked" Source="baseline_control_point_black_18dp.png" BorderColor="Black" CornerRadius="30" WidthRequest="50" HeightRequest="50"  Margin="15"  HorizontalOptions="End" VerticalOptions="End"/>
+            </StackLayout>
 
                 <!--<Button Text="Create an Event" VerticalOptions="End" HorizontalOptions="Center" Clicked="CreateButton" BackgroundColor="#3897F0"  TextColor="White" HeightRequest="50" WidthRequest="150"/>
        <Button Text="Invite Members"  VerticalOptions="End" Clicked="InviteMembersButton" BackgroundColor="OrangeRed"  TextColor="White" HeightRequest="50" WidthRequest="150"/>

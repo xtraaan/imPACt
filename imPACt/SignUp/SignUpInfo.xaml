@@ -23,7 +23,7 @@
                    TextColor="Black"/>
             
             <Entry x:Name="FirstnameEntry" 
-                   Placeholder="First Name " />
+                   Placeholder="first name" />
 
             
 
@@ -33,7 +33,7 @@
 
             <Entry x:Name="LastnameEntry" 
                    TextColor="Black" 
-                   Placeholder="Last Name" 
+                   Placeholder="last name" 
                    FontSize="16" />
 
                 <Label Text="Institution:" 
@@ -42,7 +42,7 @@
 
                 <Entry x:Name="College" 
                    TextColor="Black" 
-                   Placeholder="College/University Name" 
+                   Placeholder="college/university name" 
                    FontSize="16" />
 
                 <Label Text="Major:" 
@@ -50,7 +50,7 @@
                    TextColor="Black"/>
 
             <Picker x:Name="Major" 
-                    Title="Select a Major" 
+                    Title="select a major" 
                     SelectedIndexChanged="Picker_SelectedIndexChanged">
                 <Picker.Items>
                 </Picker.Items>
@@ -61,7 +61,7 @@
                    TextColor="Black"/>
 
             <Picker x:Name="ResearchInterests" 
-                    Title="Pick a Research Interests" 
+                    Title="pick your research interest" 
                     SelectedIndexChanged="ResearchInterests_SelectedIndexChanged">
                 <Picker.Items>
                 </Picker.Items>
@@ -72,14 +72,14 @@
                    TextColor="Black"/>
 
             <Picker x:Name="Year" 
-                    Title="Year Classification" 
+                    Title="year classification" 
                     SelectedIndexChanged="Year_SelectedIndexChanged">
                 <Picker.Items>
                 </Picker.Items>
             </Picker>
 
 
-            <Button Text="Sign Up"  
+            <Button Text="Next"  
                     VerticalOptions="End" 
                     Clicked="OnSignUpInfoClicked" 
                     BackgroundColor="#3897F0"  

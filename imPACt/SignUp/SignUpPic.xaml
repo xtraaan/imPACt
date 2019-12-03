@@ -6,13 +6,20 @@
              mc:Ignorable="d"
              x:Class="imPACt.SignUp.SignUpPic">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
+        <StackLayout Margin="50,50,50,50">
+            <Label Text="Select your profile picture"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
             <Image x:Name="image"/>
-            <Button x:Name="pickPhoto" Text="Upload Photo"/>
-            <Button Text="SIGN UP" Clicked="Button_Clicked"/>
+
+            <Button x:Name="pickPhoto" Text="Upload Photo" 
+                            Clicked="Button_Clicked" 
+                            BackgroundColor="#3897F0" 
+                            TextColor="White" />
+            <Button Text="Sign Up" 
+                            Clicked="Button_Clicked" 
+                            BackgroundColor="#3897F0" 
+                            TextColor="White" />
         </StackLayout>
 
     </ContentPage.Content>

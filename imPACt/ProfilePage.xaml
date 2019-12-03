@@ -156,6 +156,12 @@
 
 
                     </Frame>
+                    <Label FontSize="25"
+                           HorizontalOptions="CenterAndExpand"
+                                       Text="Connections" 
+                                       Margin="5"
+                                       FontAttributes="Bold"
+                                       TextColor="Black"/>
 
 
                     <cards:CoverFlowView x:Name="listView2"
@@ -171,7 +177,7 @@
                 <DataTemplate>
                    <Frame
                        BackgroundColor="#c8bfe7"
-                       Margin="30"
+                       Margin="30,0,30,30"
                        Padding="0"
                        VerticalOptions="Center"
                        HorizontalOptions="Center"
@@ -197,7 +203,7 @@
                             <Frame Grid.Column="0" Grid.RowSpan="3"
                                BackgroundColor="Transparent"
                                HasShadow="False"
-                               Margin="7,4,7,4"
+                               Margin="10,4,10,12"
                                Padding="0"
                                VerticalOptions="Center"
                                HorizontalOptions="Center"
@@ -230,12 +236,7 @@
                         </Grid>
                         <StackLayout HorizontalOptions="Center" Margin="10">
 
-                            <Label FontSize="20" 
-                                       Text="Connections" 
-                                       Margin="5"
-                                       TextDecorations="Underline"
-                                       FontAttributes="Bold"
-                                       TextColor="Black"/>
+                            
 
                         </StackLayout>
                     </StackLayout>
