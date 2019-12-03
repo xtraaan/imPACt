@@ -75,6 +75,7 @@ namespace imPACt.Login
 
             NewUser.FirstName = FirstnameEntry.Text;
             NewUser.LastName = LastnameEntry.Text;
+            NewUser.School = College.Text;
 
 
            // await App.Database.SaveUserAsync(NewUser);
