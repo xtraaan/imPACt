@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using imPACt.Tables;
 using Xamarin.Forms;
 
 namespace imPACt
 {
     public partial class EventsPage : ContentPage
     {
-        public EventsPage()
+        Events clickedContent = new Events();
+        public EventsPage(Events content)
         {
             InitializeComponent();
+            clickedContent = content;
             //NavigationPage.SetHasNavigationBar(this, false);
         }
 

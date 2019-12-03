@@ -19,7 +19,7 @@
                     <RowDefinition Height="auto" />
 
                 </Grid.RowDefinitions>
-
+    
             <StackLayout Grid.Row="1" Margin="40,40,40,0">
                 <Image Source="eventstitle.png" HorizontalOptions="Center" Aspect="AspectFit"/>
                 <!--<Label x:Name="RecommendedMatches" Text="Recommended Matches" VerticalOptions="Start" HorizontalOptions="Center" FontSize="Title" FontFamily="Times New Roman" TextDecorations="Underline"/>-->
@@ -33,20 +33,21 @@
             x:Name="listView"
             Margin="0,8,0,0"
             HasUnevenRows="True"
-            
+            ItemTapped="ListView_ItemTapped"
             SeparatorVisibility="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Frame CornerRadius="20" 
+                                
+                                    <Frame CornerRadius="20" 
                         
                         Padding="0"
                         Margin="5"
                         IsClippedToBounds="True"
                         HeightRequest="125"
                                    HorizontalOptions="Center">
-
-                                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand"  BackgroundColor="WhiteSmoke"  >
+                                     
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand"  BackgroundColor="WhiteSmoke"  >
                                     <Image Source="{Binding ImageSource}" HeightRequest="50" WidthRequest="100" BackgroundColor="#c8bfe7" Aspect="AspectFill"/>
                                     <StackLayout Orientation="Vertical">
 
@@ -54,13 +55,12 @@
                                         <Label Text="{Binding Description}" FontSize="16" TextColor="Black"/>
 
                                     </StackLayout>
-                                    <StackLayout.GestureRecognizers>
-                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-                                    </StackLayout.GestureRecognizers>
+                                    
                                 </StackLayout>
-
-                            </Frame>
-                        </ViewCell>
+                                    
+                                </Frame>
+                                
+                            </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

@@ -58,5 +58,11 @@ namespace imPACt
         {
             await Navigation.PushAsync(new EventsFormPage());
         }
+
+        private async void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var content = e.Item as Events;
+            await Navigation.PushAsync(new EventsPage(content));
+        }
     }
 }
