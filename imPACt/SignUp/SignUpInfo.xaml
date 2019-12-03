@@ -13,8 +13,8 @@
 
     <ContentPage.Content>
 
-
-        <StackLayout VerticalOptions="StartAndExpand"
+        <ScrollView>
+            <StackLayout VerticalOptions="StartAndExpand"
                      Margin="10,40,10,40"
                      BackgroundColor="White">
         
@@ -24,7 +24,9 @@
             
             <Entry x:Name="FirstnameEntry" 
                    Placeholder="First Name " />
+
             
+
             <Label Text="Last Name:" 
                    Margin="0,10,0,0"
                    TextColor="Black"/>
@@ -34,7 +36,16 @@
                    Placeholder="Last Name" 
                    FontSize="16" />
 
-            <Label Text="Major:" 
+                <Label Text="Institution:" 
+                   Margin="0,10,0,0"
+                   TextColor="Black"/>
+
+                <Entry x:Name="College" 
+                   TextColor="Black" 
+                   Placeholder="College/University Name" 
+                   FontSize="16" />
+
+                <Label Text="Major:" 
                    Margin="0,10,0,0"
                    TextColor="Black"/>
 
@@ -77,5 +88,6 @@
                     HeightRequest="50"/>
             
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

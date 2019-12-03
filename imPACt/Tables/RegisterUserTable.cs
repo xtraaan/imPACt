@@ -53,7 +53,15 @@ namespace imPACt.Tables
         }
     }
 
-    public class Events
+	public class News
+	{
+		[PrimaryKey, AutoIncrement] public int Id { get; set; }
+		public string NewsName { get; set; }
+		public string NewsDescription { get; set; }
+		public string NewsAuthor { get; set; }
+	}
+
+	public class Events
     {
         [PrimaryKey, AutoIncrement] public int Id { get; set; }
         public string Description { get; set; }
