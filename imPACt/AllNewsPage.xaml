@@ -1,7 +1,79 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="imPACt.AllNewsPage">
+             x:Class="imPACt.AllNewsPage"
+             xmlns:cardView="clr-namespace:CardView;assembly=CardView">
+
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="10, 20, 10, 0" Android="10, 20, 10, 0" />
+    </ContentPage.Padding>
     <ContentPage.Content>
+        <StackLayout>
+
+            <StackLayout>
+                <Image Source="newstitle.png" HorizontalOptions="Center"/>
+            </StackLayout>
+
+
+            <ListView
+            x:Name="listView"
+            Margin="0,8,0,0"
+            HasUnevenRows="True"
+            
+            SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame CornerRadius="20"
+                            Padding="0"
+                            Margin="20"
+                            IsClippedToBounds="True"
+                            HeightRequest="150">
+
+                                <StackLayout Orientation="Horizontal"
+                                             HorizontalOptions="Start"
+                                             BackgroundColor="White"  >
+                                    <!--<Image Source="{Binding ImageSource}"
+                                           HeightRequest="50"
+                                           WidthRequest="100"
+                                           BackgroundColor="#c8bfe7"
+                                           Aspect="AspectFill"/>-->
+                                    <StackLayout Orientation="Vertical">
+
+                                        <Label Text="{Binding NewsName}"
+                                               FontSize="25"
+                                               TextColor="Black"/>
+                                        <Label Text="{Binding NewsAuthor}"
+                                               FontSize="25"
+                                               TextColor="Black"/>
+                                        <Label Text="{Binding NewsDescription}"
+                                               FontSize="16"
+                                               TextColor="Black"/>
+
+                                    </StackLayout>
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                    </StackLayout.GestureRecognizers>
+                                </StackLayout>
+
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ImageButton Clicked="ImageButton_Clicked"
+                         Source="baseline_control_point_black_18dp.png"
+                         BorderColor="Black"
+                         BackgroundColor="#3897F0"
+                         CornerRadius="30"
+                         WidthRequest="50"
+                         HeightRequest="50"
+                         Margin="15"
+                         HorizontalOptions="End"
+                         VerticalOptions="End"/>
+
+        </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>
