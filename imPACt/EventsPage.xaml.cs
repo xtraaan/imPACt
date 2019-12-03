@@ -12,6 +12,10 @@ namespace imPACt
         {
             InitializeComponent();
             clickedContent = content;
+            eventImage.Source = clickedContent.ImageSource;
+            eventTitle.Text = clickedContent.Title;
+            //date.Text = clickedContent.EventDate.ToString();
+            description.Text = clickedContent.Description;
             //NavigationPage.SetHasNavigationBar(this, false);
         }
 
