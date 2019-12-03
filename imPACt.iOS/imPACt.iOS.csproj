@@ -120,6 +120,8 @@
     <ImageAsset Include="Assets.xcassets\matchtitle.png.imageset\matchtitle.png" />
     <ImageAsset Include="Assets.xcassets\impact.png.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\impact.png.imageset\impact.png" />
+    <ImageAsset Include="Assets.xcassets\eventstitle.png.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\eventstitle.png.imageset\eventstitle.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -166,5 +168,6 @@
     <Folder Include="Assets.xcassets\matchtitle.png.imageset\" />
     <Folder Include="Assets.xcassets\matchtitle.png.imageset\" />
     <Folder Include="Assets.xcassets\impact.png.imageset\" />
+    <Folder Include="Assets.xcassets\eventstitle.png.imageset\" />
   </ItemGroup>
 </Project>

@@ -6,8 +6,16 @@
              Title="Events"
              xmlns:cardView="clr-namespace:CardView;assembly=CardView"
 >
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="10, 20, 10, 0" Android="10, 20, 10, 0" />
+    </ContentPage.Padding>
     <ContentPage.Content>
         <StackLayout>
+
+            <StackLayout>
+                <Image Source="eventstitle.png" HorizontalOptions="Center"/>
+                <!--<Label x:Name="RecommendedMatches" Text="Recommended Matches" VerticalOptions="Start" HorizontalOptions="Center" FontSize="Title" FontFamily="Times New Roman" TextDecorations="Underline"/>-->
+            </StackLayout>
             
                 <!-- This will be a LIST VIEW of a Item template of all events
                           This is just an example to work with the view first -->
