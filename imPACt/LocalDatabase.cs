@@ -21,8 +21,8 @@ namespace imPACt
             _database = new SQLiteAsyncConnection(path);
             _database.CreateTableAsync<RegisterUserTable>().Wait();
             _database.CreateTableAsync<Events>().Wait();
+            _database.CreateTableAsync<Friends>().Wait();
 
-            
         }
 
 
@@ -45,16 +45,8 @@ namespace imPACt
             return _database.InsertAsync(user);
         }
 
-        //Saving Event
-        public Task<int> SaveEventAsync(Events user)
-        {
-            return _database.InsertAsync(user);
-        }
 
-        public Task<List<Events>> GetEventAsync()
-        {
-            return _database.Table<Events>().ToListAsync();
-        }
+        
 
         // Get Match list
         public List<RegisterUserTable> GetMatches()
@@ -74,6 +66,41 @@ namespace imPACt
         }
 
 
+
+
+
+
+
+
+        /************************EVENTS***********************/
+
+        public Task<List<Events>> GetEventAsync()
+        {
+            return _database.Table<Events>().ToListAsync();
+        }
+
+
+        //Saving Event
+        public Task<int> SaveEventAsync(Events user)
+        {
+            return _database.InsertAsync(user);
+        }
+
+       
+        
+        /******************* FRIENDS ***************/
+
+        public Task<List<Friends>> GetFriendAsync()
+        {
+            return _database.Table<Friends>().ToListAsync();
+        }
+
+
+        //Saving Event
+        public Task<int> SaveFriendAsync(Friends user)
+        {
+            return _database.InsertAsync(user);
+        }
 
     }
 

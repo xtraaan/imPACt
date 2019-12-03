@@ -5,9 +5,13 @@ using Xamarin.Forms;
 
 namespace imPACt.Matching
 {
+    
     public partial class ConnectProfilePage : ContentPage
     {
+        Friends friend = new Friends();
         public RegisterUserTable ClickedUser;
+
+
         public ConnectProfilePage(RegisterUserTable user)
         {
 
@@ -29,7 +33,11 @@ namespace imPACt.Matching
         // Needs to be fixed, populate list in Matches
         async void OnConnectClicked(object sender, EventArgs e)
         {
-            App.currentUser.Matches.Add(ClickedUser);
+            friend.userID = App.currentUser.UserId;
+            friend.FriendID = ClickedUser.UserId;
+
+            await App.Database.SaveFriendAsync(friend);
+            
             await DisplayAlert("Match Added", "Return to Matches", "Okay");
             await this.Navigation.PopAsync();
 

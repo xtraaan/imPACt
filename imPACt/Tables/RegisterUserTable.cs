@@ -77,4 +77,14 @@ namespace imPACt.Tables
 
 
     }
+
+    //Brute force
+    public class Friends
+    {
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+        public int userID { get; set; }
+        public int FriendID { get; set; }
+    }
+     
 }
