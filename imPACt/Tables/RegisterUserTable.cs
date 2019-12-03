@@ -43,4 +43,12 @@ namespace imPACt.Tables
         public string Title { get; set; }
         public string Owner { get; set; }
     }
+
+    public class News
+    {
+        [PrimaryKey, AutoIncrement] public int Id { get; set; }
+        public string NewsDescription { get; set; }
+        public string NewsTitle { get; set; }
+        public string NewsAuthor { get; set; }
+    }
 }
