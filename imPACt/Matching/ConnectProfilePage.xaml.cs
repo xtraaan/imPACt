@@ -23,10 +23,11 @@ namespace imPACt.Matching
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            name.Text = ClickedUser.FullName;
-            researchInterests.Text = ClickedUser.ResearchInterest;
-            major.Text = ClickedUser.Major;
-            gradeYear.Text = ClickedUser.Year;
+            name.Text = " " + ClickedUser.FullName;
+            researchInterests.Text = " " + ClickedUser.ResearchInterest;
+            major.Text = " " + ClickedUser.Major;
+            gradeYear.Text = " " + ClickedUser.Year;
+            school.Text = " " + ClickedUser.School;
 
         }
 

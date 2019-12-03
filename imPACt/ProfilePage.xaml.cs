@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using imPACt.Tables;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -26,7 +26,7 @@ namespace imPACt
 
         }
 
-        public void OnAppearing()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
 
@@ -35,6 +35,34 @@ namespace imPACt
             major.Text = "  " + App.currentUser.Major;
             gradeYear.Text = "  " + App.currentUser.Year;
             school.Text = "  " + App.currentUser.School;
+
+            var users = await App.Database.GetFriendAsync();
+            List<Friends> list = new List<Friends>();
+
+            foreach (var ev in users)
+            {
+                if (App.currentUser.UserId == ev.userID)
+                {
+                    list.Add(ev);
+                }
+            }
+
+            var match = await App.Database.GetUsersAsync();
+            List<RegisterUserTable> matches = new List<RegisterUserTable>();
+
+            foreach (var ev in match)
+            {
+                foreach (var fr in list)
+                {
+                    if (ev.UserId == fr.FriendID)
+                    {
+                        matches.Add(ev);
+                    }
+                }
+
+            }
+
+            listView2.ItemsSource = matches;
 
         }
 
