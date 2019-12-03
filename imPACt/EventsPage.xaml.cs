@@ -15,7 +15,7 @@ namespace imPACt
 
         private async void UpdateButton(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new EventsFormPage());
+            await Navigation.PopAsync();
         }
 
         //private async void InviteMembersButton(object sender, EventArgs e)

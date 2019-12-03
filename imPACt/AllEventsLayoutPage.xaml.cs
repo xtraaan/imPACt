@@ -1,6 +1,7 @@
-﻿using System;
+﻿using imPACt.Tables;
+using System;
 using System.Collections.Generic;
-
+using System.Linq;
 using Xamarin.Forms;
 
 namespace imPACt
@@ -13,7 +14,37 @@ namespace imPACt
             NavigationPage.SetHasNavigationBar(this, false);
         }
 
-        private async void CreateButton(object sender, EventArgs e)
+
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            //Remove current user from list
+            var users = await App.Database.GetEventAsync();
+            List<Events> list = new List<Events>();
+
+            foreach (var ev in users)
+            {
+                if (ev != null)
+                {
+                   list.Add(ev);
+                }
+             }
+            
+            if (list.Count() != 0)
+                listView.ItemsSource = list;
+            else
+                await DisplayAlert("No Current Events", "Try again later...", "Okay", "Cancel");
+        } 
+
+
+
+
+
+
+
+            private async void CreateButton(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new EventsFormPage());
         }

@@ -3,42 +3,56 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              IconImageSource="baseline_list_alt_black_18dp.png"
              x:Class="imPACt.AllEventsLayoutPage"
-             Title="Events">
+             Title="Events"
+             xmlns:cardView="clr-namespace:CardView;assembly=CardView"
+>
     <ContentPage.Content>
         <StackLayout>
             
                 <!-- This will be a LIST VIEW of a Item template of all events
                           This is just an example to work with the view first -->
-                    <Frame CornerRadius="20" 
+            <ListView
+            x:Name="listView"
+            Margin="0,8,0,0"
+            HasUnevenRows="True"
+            
+            SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame CornerRadius="20" 
                         OutlineColor="Black" 
                         Padding="0"
                         Margin="20"
                         IsClippedToBounds="True"
                         HeightRequest="150">
-                    
-                        <StackLayout Orientation="Horizontal" HorizontalOptions="Start"  BackgroundColor="White"  >
-                            <Image Source="TEDTalk.png" HeightRequest="50" WidthRequest="100" BackgroundColor="#c8bfe7" Aspect="AspectFill"/>
-                        <StackLayout Orientation="Vertical">
-                            
-                            <Label Text="TED Talk Machine Learning" FontSize="25" TextColor="Black"/>
-                            <Label Text="This is a talk about the future of machine learning" FontSize="16" TextColor="Black"/>
-                            
-                        </StackLayout>
-                        <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-                        </StackLayout.GestureRecognizers>
-                    </StackLayout>
-                    
-                </Frame>
 
-                <ImageButton Clicked="ImageButton_Clicked" Source="baseline_control_point_black_18dp.png" BorderColor="Black" BackgroundColor="#3897F0" CornerRadius="30" WidthRequest="50" HeightRequest="50"  Margin="15"  HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand"/>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Start"  BackgroundColor="White"  >
+                                    <Image Source="TEDTalk.png" HeightRequest="50" WidthRequest="100" BackgroundColor="#c8bfe7" Aspect="AspectFill"/>
+                                    <StackLayout Orientation="Vertical">
+
+                                        <Label Text="{Binding Title}" FontSize="25" TextColor="Black"/>
+                                        <Label Text="{Binding Description}" FontSize="16" TextColor="Black"/>
+
+                                    </StackLayout>
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                    </StackLayout.GestureRecognizers>
+                                </StackLayout>
+
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ImageButton Clicked="ImageButton_Clicked" Source="baseline_control_point_black_18dp.png" BorderColor="Black" BackgroundColor="#3897F0" CornerRadius="30" WidthRequest="50" HeightRequest="50"  Margin="15"  HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand"/>
 
                 <!--<Button Text="Create an Event" VerticalOptions="End" HorizontalOptions="Center" Clicked="CreateButton" BackgroundColor="#3897F0"  TextColor="White" HeightRequest="50" WidthRequest="150"/>
        <Button Text="Invite Members"  VerticalOptions="End" Clicked="InviteMembersButton" BackgroundColor="OrangeRed"  TextColor="White" HeightRequest="50" WidthRequest="150"/>
         -->
-                
-
             
+
+
         </StackLayout>
         
     </ContentPage.Content>

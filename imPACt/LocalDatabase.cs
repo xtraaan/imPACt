@@ -5,6 +5,9 @@ using SQLite;
 using imPACt.Tables;
 using System.Threading.Tasks;
 using System.Linq;
+using SQLite;
+using SQLiteNetExtensions;
+using SQLiteNetExtensions.Extensions;
 
 namespace imPACt
 {
@@ -17,6 +20,9 @@ namespace imPACt
         {
             _database = new SQLiteAsyncConnection(path);
             _database.CreateTableAsync<RegisterUserTable>().Wait();
+            _database.CreateTableAsync<Events>().Wait();
+
+            
         }
 
 
@@ -39,6 +45,17 @@ namespace imPACt
             return _database.InsertAsync(user);
         }
 
+        //Saving Event
+        public Task<int> SaveEventAsync(Events user)
+        {
+            return _database.InsertAsync(user);
+        }
+
+        public Task<List<Events>> GetEventAsync()
+        {
+            return _database.Table<Events>().ToListAsync();
+        }
+
         // Get Match list
         public List<RegisterUserTable> GetMatches()
         {
@@ -47,6 +64,7 @@ namespace imPACt
 
         public Task<int> UpdateUser()
         {
+            
             return _database.UpdateAsync(App.currentUser);
         }
 
@@ -54,5 +72,11 @@ namespace imPACt
         {
             return _database.Table<RegisterUserTable>().Where(u => u.Username.Equals(username) && u.Password.Equals(pass)).FirstOrDefaultAsync();
         }
+
+
+
     }
+
+    
+
 }
