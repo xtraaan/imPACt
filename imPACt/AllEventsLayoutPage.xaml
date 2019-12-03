@@ -40,7 +40,7 @@
                             <Frame CornerRadius="20" 
                         
                         Padding="0"
-                        Margin="20"
+                        Margin="5"
                         IsClippedToBounds="True"
                         HeightRequest="150">
 
