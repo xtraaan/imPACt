@@ -10,7 +10,12 @@
             <Entry x:Name="eventName" Placeholder="Event Name " />
             
             <Label Text="Event Date" />
-            <Entry x:Name="eventDate" TextColor="Black" Placeholder="Event Date" FontSize="16" />
+            <DatePicker
+                x:Name="date"
+                
+                MinimumDate="12/03/2019"
+                MaximumDate="12/31/2020"
+                DateSelected="DatePicker_DateSelected"/>
 
             <Label Text="Event Description" />
             <Entry x:Name="descriptionName" TextColor="Black" Placeholder="Event Description" FontSize="16" />

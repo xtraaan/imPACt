@@ -72,6 +72,11 @@ namespace imPACt
             await Navigation.PushAsync(new MainPage());
         }
 
-        
+
+
+        private void DatePicker_DateSelected(object sender, DateChangedEventArgs e)
+        {
+            Event1.EventDate = date.Date;
+        }
     }
 }

@@ -67,6 +67,8 @@ namespace imPACt.Tables
         public string Description { get; set; }
         public string Title { get; set; }
         public string Owner { get; set; }
+
+        public DateTime EventDate { get; set; }
         public byte[] ImageBytes { get; set; }
 
         [Ignore]
