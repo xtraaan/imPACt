@@ -30,11 +30,12 @@ namespace imPACt
         {
             base.OnAppearing();
 
-            name.Text = "  " + App.currentUser.FirstName + " " + App.currentUser.LastName;
+            name.Text = "  " + App.currentUser.FullName;
             researchInterests.Text = "  " + App.currentUser.ResearchInterest;
             major.Text = "  " + App.currentUser.Major;
             gradeYear.Text = "  " + App.currentUser.Year;
             school.Text = "  " + App.currentUser.School;
+            image.Source = App.currentUser.ImageSource;
 
             var users = await App.Database.GetFriendAsync();
             List<Friends> list = new List<Friends>();

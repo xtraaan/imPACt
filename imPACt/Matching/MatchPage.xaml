@@ -22,7 +22,7 @@
     
    <StackLayout VerticalOptions="Center">
             <StackLayout>
-                <Image Source="matchtitle.png" HorizontalOptions="Center"/>
+                <Image Source="matchtitle.png" HorizontalOptions="Center" VerticalOptions="Start"/>
                 <!--<Label x:Name="RecommendedMatches" Text="Recommended Matches" VerticalOptions="Start" HorizontalOptions="Center" FontSize="Title" FontFamily="Times New Roman" TextDecorations="Underline"/>-->
             </StackLayout>
             <cards:CoverFlowView x:Name="listView"
@@ -63,7 +63,7 @@
 
                             </Grid.RowDefinitions>
                             <Frame Grid.Row="0" CornerRadius="0" Padding="0" IsClippedToBounds="True" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                                <Image Source="default.png" Aspect="AspectFill"></Image>
+                                <Image Source="{Binding ImageSource}" Aspect="AspectFill"></Image>
                             </Frame>
                             
                             <Label x:Name="FullName" Text="{Binding FullName}" Grid.Row="1" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Title" />

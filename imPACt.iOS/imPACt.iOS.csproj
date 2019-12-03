@@ -122,6 +122,8 @@
     <ImageAsset Include="Assets.xcassets\impact.png.imageset\impact.png" />
     <ImageAsset Include="Assets.xcassets\eventstitle.png.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\eventstitle.png.imageset\eventstitle.png" />
+    <ImageAsset Include="Assets.xcassets\setting.png.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\setting.png.imageset\setting.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -146,6 +148,9 @@
     <PackageReference Include="CardsView">
       <Version>2.3.7</Version>
     </PackageReference>
+    <PackageReference Include="Xam.Plugins.Forms.ImageCircle">
+      <Version>3.0.0.5</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -169,5 +174,6 @@
     <Folder Include="Assets.xcassets\matchtitle.png.imageset\" />
     <Folder Include="Assets.xcassets\impact.png.imageset\" />
     <Folder Include="Assets.xcassets\eventstitle.png.imageset\" />
+    <Folder Include="Assets.xcassets\setting.png.imageset\" />
   </ItemGroup>
 </Project>

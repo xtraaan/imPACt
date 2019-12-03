@@ -11,11 +11,20 @@
     </ContentPage.Padding>
     <ContentPage.Content>
         <StackLayout>
+            <Grid>
 
-            <StackLayout>
-                <Image Source="eventstitle.png" HorizontalOptions="Center"/>
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="auto" />
+
+                </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="1" Margin="40,40,40,0">
+                <Image Source="eventstitle.png" HorizontalOptions="Center" Aspect="AspectFit"/>
                 <!--<Label x:Name="RecommendedMatches" Text="Recommended Matches" VerticalOptions="Start" HorizontalOptions="Center" FontSize="Title" FontFamily="Times New Roman" TextDecorations="Underline"/>-->
             </StackLayout>
+            </Grid>
             
                 <!-- This will be a LIST VIEW of a Item template of all events
                           This is just an example to work with the view first -->

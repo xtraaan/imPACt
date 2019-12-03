@@ -28,6 +28,7 @@ namespace imPACt.Matching
             major.Text = " " + ClickedUser.Major;
             gradeYear.Text = " " + ClickedUser.Year;
             school.Text = " " + ClickedUser.School;
+            image.Source = ClickedUser.ImageSource;
 
         }
 

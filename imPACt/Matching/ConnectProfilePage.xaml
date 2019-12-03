@@ -3,9 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              mc:Ignorable="d"
              x:Class="imPACt.Matching.ConnectProfilePage"
-             Title="ConnectProfile"
              IconImageSource="baseline_person_black_18dp.png">
 
     <ContentPage.Content>
@@ -16,32 +16,56 @@
 
             <StackLayout x:Name="ProfileMasterLayout" BackgroundColor="White">
 
-                <ImageButton Source="settingBtn.png"
-                        Margin="5"
-                        HorizontalOptions="End"
-                        WidthRequest="60"
-                        VerticalOptions="Fill" />
+                <Grid>
 
-                <StackLayout x:Name="TopOfProfilePageLayout">
+                <Grid.RowDefinitions>
 
-                    <StackLayout.Padding>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="50" />
 
-                        <OnIdiom x:TypeArguments="Thickness"
-                                     Phone="40,0,40,0" 
-                                     Tablet="140,100,140,100">
-                        </OnIdiom>
+                </Grid.RowDefinitions>
 
-                    </StackLayout.Padding>
+                    <Frame Grid.Row="0"
+                       Margin="30,30,30,30"
+                       Padding="0"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       IsClippedToBounds="true"
+                       HeightRequest="200"
+                       WidthRequest="200"
+                       >
+                        <controls:CircleImage x:Name="image" Aspect="AspectFill">
+                          <controls:CircleImage.WidthRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                              <On Platform="Android, iOS">55</On>
+                              <On Platform="WinPhone">75</On>
+                            </OnPlatform>
+                          </controls:CircleImage.WidthRequest>
+                          <controls:CircleImage.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                              <On Platform="Android, iOS">55</On>
+                              <On Platform="WinPhone">75</On>
+                            </OnPlatform>
+                          </controls:CircleImage.HeightRequest>
+                        </controls:CircleImage>
 
-                    <StackLayout Orientation="Horizontal"  HeightRequest="120">
+                    </Frame>
 
-                        <Image x:Name="profilePicDefault" 
-                                       Source="userDefaultPict.png" 
-                                       WidthRequest="120" 
-                                       Aspect="Fill" 
-                                       HorizontalOptions="CenterAndExpand"/>
+                    <!--<Image x:Name="image"
+                        Aspect="AspectFit"
+                        Margin="0,20,0,0"/>-->
+                    <Label x:Name="name" 
+                               Text="   Name   " 
+                               FontAttributes="Bold" 
+                               FontSize="26" 
+                               TextColor="Black"
+                               VerticalOptions="Center"
+                               HorizontalOptions="CenterAndExpand"
+                           Grid.Row="1" />
+  
 
-                    </StackLayout>
+            </Grid>
+                <!--<StackLayout>
 
                     <Label x:Name="name" 
                                Text="   Name   " 
@@ -51,9 +75,9 @@
                                VerticalOptions="Center"
                                HorizontalOptions="CenterAndExpand"/>
 
-                     <Button x:Name="Connect" Text="Connect" Clicked="OnConnectClicked" BackgroundColor="#3897F0" TextColor="White" HeightRequest="50" VerticalOptions="Start" Padding="0" Margin="20"/>
+                    
 
-                </StackLayout>
+                </StackLayout>-->
 
                 <StackLayout x:Name="ProfileUserLayout" 
                              VerticalOptions="StartAndExpand">
@@ -119,40 +143,13 @@
 
                         </StackLayout>
 
+
+
                     </Frame>
 
+                    <Button x:Name="Connect" Text="Connect" Clicked="OnConnectClicked" BackgroundColor="#3897F0" TextColor="White" HeightRequest="50" VerticalOptions="Start" Padding="0" Margin="20"/>
+
                 </StackLayout>
-
-                <!--<StackLayout Orientation="Horizontal"  HeightRequest="70" Grid.Column="0">
-                    <Image x:Name="logoRepeat" 
-                           Source="impactRepeat.png" 
-                           WidthRequest="413" 
-                           Aspect="Fill" />
-                </StackLayout>-->
-
-                <!--<StackLayout x:Name="UserConnectionsLayout" 
-                         VerticalOptions="CenterAndExpand"
-                         BackgroundColor="#48485e">
-                    <StackLayout.Padding>
-                        <OnIdiom x:TypeArguments="Thickness"
-                             Phone="40,10,40,60" 
-                             Tablet="140,100,140,100">
-                        </OnIdiom>
-                    </StackLayout.Padding>
-                    -->
-                <!--<Label FontSize="20" 
-                           Text=" My Connections: " 
-                           TextDecorations="Underline"
-                           HorizontalOptions="CenterAndExpand"
-                           TextColor="GhostWhite" />-->
-
-                <!--<Button Text="Connect With Me" 
-                        FontAttributes="Bold"
-                        BackgroundColor="GhostWhite"
-                        TextColor="#48485e"
-                        Margin="20"/>-->
-                <!--
-                </StackLayout>-->
 
             </StackLayout>
 

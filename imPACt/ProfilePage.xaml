@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin" xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView" xmlns:proc="clr-namespace:PanCardView.Processors;assembly=PanCardView"
              mc:Ignorable="d"
              x:Class="imPACt.ProfilePage"
              Title="Profile"
@@ -10,7 +10,298 @@
 
     <ContentPage.Content>
 
-        <StackLayout BackgroundColor="White">
+    <Frame VerticalOptions="FillAndExpand"
+               Padding="10"
+               HasShadow="False">
+
+            <StackLayout x:Name="ProfileMasterLayout" BackgroundColor="White">
+
+                <Grid>
+
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="50" />
+
+                </Grid.RowDefinitions>
+
+                    <ImageButton Source="setting.png"
+                        Clicked="ImageButton_Clicked"
+                        Margin="0,20,0,0"
+                        VerticalOptions="StartAndExpand"
+                        HorizontalOptions="End"
+                                 Grid.Row="0"
+                                 />
+
+                    <Frame Grid.Row="0"
+                       Margin="30,30,30,30"
+                       Padding="0"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       IsClippedToBounds="true"
+                       HeightRequest="200"
+                       WidthRequest="200"
+                       >
+                        <controls:CircleImage x:Name="image" Aspect="AspectFill">
+                          <controls:CircleImage.WidthRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                              <On Platform="Android, iOS">55</On>
+                              <On Platform="WinPhone">75</On>
+                            </OnPlatform>
+                          </controls:CircleImage.WidthRequest>
+                          <controls:CircleImage.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                              <On Platform="Android, iOS">55</On>
+                              <On Platform="WinPhone">75</On>
+                            </OnPlatform>
+                          </controls:CircleImage.HeightRequest>
+                        </controls:CircleImage>
+
+                    </Frame>
+
+                    <!--<Image x:Name="image"
+                        Aspect="AspectFit"
+                        Margin="0,20,0,0"/>-->
+                    <Label x:Name="name" 
+                               Text="   Name   " 
+                               FontAttributes="Bold" 
+                               FontSize="26" 
+                               TextColor="Black"
+                               VerticalOptions="Center"
+                               HorizontalOptions="CenterAndExpand"
+                           Grid.Row="1" />
+  
+
+            </Grid>
+                <!--<StackLayout>
+
+                    <Label x:Name="name" 
+                               Text="   Name   " 
+                               FontAttributes="Bold" 
+                               FontSize="26" 
+                               TextColor="Black"
+                               VerticalOptions="Center"
+                               HorizontalOptions="CenterAndExpand"/>
+
+                    
+
+                </StackLayout>-->
+
+                <StackLayout x:Name="ProfileUserLayout" 
+                             VerticalOptions="StartAndExpand">
+
+                    <StackLayout.Padding>
+                        <OnIdiom x:TypeArguments="Thickness"
+                                 Phone="40,20,40,0" 
+                                 Tablet="140,100,140,100">
+                        </OnIdiom>
+                    </StackLayout.Padding>
+
+                    <Frame VerticalOptions="FillAndExpand"
+                           Padding="5"
+                           BorderColor="#48485e"
+                           HasShadow="False">
+
+                        <StackLayout x:Name="UserInfoLayout" 
+                                         HorizontalOptions="FillAndExpand" Margin="10">
+
+                            <Label FontSize="20" 
+                                       Text="Current Education Level:" 
+                                       Margin="5"
+                                       TextDecorations="Underline"
+                                       FontAttributes="Bold"
+                                       TextColor="Black"/>
+
+                            <Label x:Name="gradeYear" 
+                                        TextColor="Black" 
+                                        FontSize="20"/>
+
+                            <Label FontSize="20" 
+                                        Text="Research Interests:" 
+                                        Margin="5"
+                                        TextDecorations="Underline"
+                                        FontAttributes="Bold"
+                                        TextColor="Black" />
+
+                            <Label x:Name="researchInterests"
+                                        TextColor="Black"
+                                        FontSize="20" />
+
+                            <Label FontSize="20" 
+                                        Text="Major:" 
+                                        Margin="5"
+                                        TextDecorations="Underline"
+                                        FontAttributes="Bold"
+                                        TextColor="Black" />
+
+                            <Label x:Name="major" 
+                                        TextColor="Black" 
+                                        FontSize="20" />
+
+                            <Label FontSize="20" 
+                                        Margin="5"
+                                        Text="Institution:" 
+                                        TextDecorations="Underline"
+                                        FontAttributes="Bold"
+                                        TextColor="Black" />
+
+                            <Label x:Name="school"
+                                        TextColor="Black"
+                                        FontSize="20" />
+
+                        </StackLayout>
+
+
+
+
+
+                    </Frame>
+
+
+                    <cards:CoverFlowView x:Name="listView2"
+                                 PositionShiftValue="100"
+                                 IsCyclical="false">
+
+                <x:Arguments>
+                    <proc:BaseCoverFlowFrontViewProcessor ScaleFactor="0.75" OpacityFactor="0.15" />
+                    <proc:BaseCoverFlowBackViewProcessor  ScaleFactor="0.75" OpacityFactor="0.15" />
+                </x:Arguments>
+
+            <cards:CoverFlowView.ItemTemplate>
+                <DataTemplate>
+                   <Frame
+                       BackgroundColor="#c8bfe7"
+                       Margin="30"
+                       Padding="0"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       HasShadow="True" 
+                       IsClippedToBounds="true"
+                       CornerRadius="10"
+                       HeightRequest="140"
+                       WidthRequest="400"
+                       >
+
+                    <StackLayout>
+
+                        <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="20"/>
+                                <RowDefinition Height="20"/>
+                                <RowDefinition Height="20"/>
+                 
+
+
+                            </Grid.RowDefinitions>
+
+                            <Frame Grid.Column="0" Grid.RowSpan="3"
+                               BackgroundColor="Transparent"
+                               HasShadow="False"
+                               Margin="7,4,7,4"
+                               Padding="0"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"
+                               IsClippedToBounds="true"
+                               HeightRequest="60"
+                               WidthRequest="200"
+                               >
+                
+                                <controls:CircleImage Source="{Binding ImageSource}" Aspect="AspectFill">
+                                  <controls:CircleImage.WidthRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                      <On Platform="Android, iOS">55</On>
+                                      <On Platform="WinPhone">75</On>
+                                    </OnPlatform>
+                                  </controls:CircleImage.WidthRequest>
+                                  <controls:CircleImage.HeightRequest>
+                                    <OnPlatform x:TypeArguments="x:Double">
+                                      <On Platform="Android, iOS">55</On>
+                                      <On Platform="WinPhone">75</On>
+                                    </OnPlatform>
+                                  </controls:CircleImage.HeightRequest>
+                                </controls:CircleImage>
+
+                         
+                            </Frame>
+                            
+                            <Label x:Name="FullName" Text="{Binding FullName}" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Large" />
+
+                            
+                        </Grid>
+                        <StackLayout HorizontalOptions="Center" Margin="10">
+
+                            <Label FontSize="20" 
+                                       Text="Connections" 
+                                       Margin="5"
+                                       TextDecorations="Underline"
+                                       FontAttributes="Bold"
+                                       TextColor="Black"/>
+
+                        </StackLayout>
+                    </StackLayout>
+                       
+
+
+
+
+                  </Frame>
+                </DataTemplate>
+            </cards:CoverFlowView.ItemTemplate>
+                        </cards:CoverFlowView>
+
+
+                </StackLayout>
+
+
+
+                <!--<ListView x:Name="listView2" RowHeight="100">
+
+            <ListView.Header>
+                <Grid HorizontalOptions="FillAndExpand">
+                    <Label Text ="Connections" FontSize="Title" VerticalOptions="Center" HorizontalOptions="Center" TextDecorations="Underline" />
+                </Grid>
+            </ListView.Header>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+
+                        <Grid Padding="15,0,15,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label x:Name="FullName" Text="{Binding FullName}" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Large" />
+                            <Label x:Name="Email" Text="{Binding Email}" Grid.Row="2" Grid.Column="0" FontSize="Small" VerticalOptions="Center" HorizontalOptions="Center" TextColor="Accent" />
+                            <Label x:Name="Year" Text="{Binding Year}" Grid.Row="3" Grid.Column="0" Grid.RowSpan="2" VerticalOptions="Center" HorizontalOptions="Center" TextColor ="Accent" />
+
+                        </Grid>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>-->
+
+
+            </StackLayout>
+
+
+
+        </Frame>
+
+        <!--#49425E-->
+
+    </ContentPage.Content>
+
+</ContentPage>
+
+        <!--<StackLayout BackgroundColor="White">
 
             <Grid>
 
@@ -122,10 +413,10 @@
                             <Label x:Name="Email" Text="{Binding Email}" Grid.Row="2" Grid.Column="0" FontSize="Small" VerticalOptions="Center" HorizontalOptions="Center" TextColor="Accent" />
                             <Label x:Name="Year" Text="{Binding Year}" Grid.Row="3" Grid.Column="0" Grid.RowSpan="2" VerticalOptions="Center" HorizontalOptions="Center" TextColor ="Accent" />
 
-                            <!--<Label x:Name="FullName" Text="{Binding FullName}" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Large" />
+                            <Label x:Name="FullName" Text="{Binding FullName}" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Large" />
                             <Label x:Name="Email" Text="{Binding Email}" Grid.Row="2" Grid.Column="1" FontSize="Small" VerticalOptions="Center" HorizontalOptions="Center" TextColor="Accent" />
                             <Label x:Name="Year" Text="{Binding Year}" Grid.Row="3" Grid.Column="1" Grid.RowSpan="2" VerticalOptions="Center" HorizontalOptions="Center" TextColor ="Accent" />
-                            <Button x:Name="Profile" Text="View Profile" Clicked="OnProfileButtonClicked" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="3" VerticalOptions="Center" TextColor="Black" BackgroundColor="LightGreen" BorderRadius="8" HorizontalOptions="EndAndExpand" Padding="4" Margin="2"/>-->
+                            <Button x:Name="Profile" Text="View Profile" Clicked="OnProfileButtonClicked" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="3" VerticalOptions="Center" TextColor="Black" BackgroundColor="LightGreen" BorderRadius="8" HorizontalOptions="EndAndExpand" Padding="4" Margin="2"/>
                         </Grid>
 
                     </ViewCell>
@@ -136,8 +427,8 @@
 
         </StackLayout>
 
-        <!--#49425E-->
+        #49425E
 
     </ContentPage.Content>
 
-</ContentPage>
+</ContentPage>-->
