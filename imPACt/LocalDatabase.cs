@@ -22,8 +22,9 @@ namespace imPACt
             _database.CreateTableAsync<RegisterUserTable>().Wait();
             _database.CreateTableAsync<Events>().Wait();
             _database.CreateTableAsync<Friends>().Wait();
+			_database.CreateTableAsync<News>().Wait();
 
-        }
+		}
 
 
         //Gets Specific user through Unique ID
@@ -69,12 +70,25 @@ namespace imPACt
 
 
 
+		/************************NEWS***********************/
+
+		public Task<List<News>> GetNewsAsync()
+		{
+			return _database.Table<News>().ToListAsync();
+		}
+
+
+		//Saving News
+		public Task<int> SaveNewsAsync(News user)
+		{
+			return _database.InsertAsync(user);
+		}
 
 
 
-        /************************EVENTS***********************/
+		/************************EVENTS***********************/
 
-        public Task<List<Events>> GetEventAsync()
+		public Task<List<Events>> GetEventAsync()
         {
             return _database.Table<Events>().ToListAsync();
         }
