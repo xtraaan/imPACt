@@ -124,6 +124,8 @@
     <ImageAsset Include="Assets.xcassets\eventstitle.png.imageset\eventstitle.png" />
     <ImageAsset Include="Assets.xcassets\setting.png.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\setting.png.imageset\setting.png" />
+    <ImageAsset Include="Assets.xcassets\baseline_control_point_black_18dp.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\baseline_control_point_black_18dp.imageset\baseline_control_point_black_18dp.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -175,5 +177,6 @@
     <Folder Include="Assets.xcassets\impact.png.imageset\" />
     <Folder Include="Assets.xcassets\eventstitle.png.imageset\" />
     <Folder Include="Assets.xcassets\setting.png.imageset\" />
+    <Folder Include="Assets.xcassets\baseline_control_point_black_18dp.imageset\" />
   </ItemGroup>
 </Project>

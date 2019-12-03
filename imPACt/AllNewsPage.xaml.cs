@@ -41,7 +41,7 @@ namespace imPACt
 
 		private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
 		{
-			await Navigation.PushAsync(new NewsPage());
+			//await Navigation.PushAsync(new NewsPage());
 		}
 
         private async void ImageButton_Clicked(object sender, EventArgs e)

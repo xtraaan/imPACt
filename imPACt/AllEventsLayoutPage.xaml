@@ -62,7 +62,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <ImageButton Clicked="ImageButton_Clicked" Source="baseline_control_point_black_18dp.png" BorderColor="Black" BackgroundColor="#3897F0" CornerRadius="30" WidthRequest="50" HeightRequest="50"  Margin="15"  HorizontalOptions="End" VerticalOptions="End"/>
+            <ImageButton Clicked="ImageButton_Clicked" Source="baseline_control_point_black_18dp.png" BorderColor="Black" CornerRadius="30" WidthRequest="50" HeightRequest="50"  Margin="15"  HorizontalOptions="End" VerticalOptions="End"/>
 
                 <!--<Button Text="Create an Event" VerticalOptions="End" HorizontalOptions="Center" Clicked="CreateButton" BackgroundColor="#3897F0"  TextColor="White" HeightRequest="50" WidthRequest="150"/>
        <Button Text="Invite Members"  VerticalOptions="End" Clicked="InviteMembersButton" BackgroundColor="OrangeRed"  TextColor="White" HeightRequest="50" WidthRequest="150"/>
