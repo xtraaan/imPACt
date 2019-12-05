@@ -10,9 +10,13 @@ namespace imPACt
     public partial class App : Application
     {
         public static bool IsUserLoggedIn { get; set; }
+        //current user logged in so this can be used throughout the app to grab current user
         public static RegisterUserTable currentUser { get; set; }
 
+        //database to call methods to delete, update ...
         static LocalDatabase database;
+
+        //Singleton to check if path for database has been set and if it has to return database
         public static LocalDatabase Database
         {
             get
@@ -29,7 +33,7 @@ namespace imPACt
         public App()
         {
             //_connection = DependencyService.Get<ISQLiteDb>().GetConnection();
-
+            //Checking if user is logged in 
             if (!IsUserLoggedIn)
             {
                 MainPage = new NavigationPage(new LoginPage());

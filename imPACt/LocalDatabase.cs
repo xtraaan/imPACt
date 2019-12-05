@@ -22,7 +22,7 @@ namespace imPACt
             _database.CreateTableAsync<RegisterUserTable>().Wait();
             _database.CreateTableAsync<Events>().Wait();
             _database.CreateTableAsync<Friends>().Wait();
-			_database.CreateTableAsync<News>().Wait();
+			
 
 		}
 
@@ -66,23 +66,6 @@ namespace imPACt
             return _database.Table<RegisterUserTable>().Where(u => u.Username.Equals(username) && u.Password.Equals(pass)).FirstOrDefaultAsync();
         }
 
-
-
-
-
-		/************************NEWS***********************/
-
-		public Task<List<News>> GetNewsAsync()
-		{
-			return _database.Table<News>().ToListAsync();
-		}
-
-
-		//Saving News
-		public Task<int> SaveNewsAsync(News user)
-		{
-			return _database.InsertAsync(user);
-		}
 
 
 

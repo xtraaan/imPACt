@@ -27,6 +27,13 @@ namespace imPACt.Matching
             var users = await App.Database.GetUsersAsync();
             List<RegisterUserTable> list = new List<RegisterUserTable>();
 
+
+            /*
+             * 
+             * taking all users and adding to list if they meet criteria and major
+             * 
+             * 
+             */
             foreach (var user in users)
             {
                 if (user.UserId != App.currentUser.UserId)
@@ -48,6 +55,7 @@ namespace imPACt.Matching
                 }
             }
 
+            //if list is empty then display alert other wise add to listView
             if (list.Count() != 0)
                 listView.ItemsSource = list;
             else
@@ -56,6 +64,7 @@ namespace imPACt.Matching
 
 
 
+        //Take the current listView data and sent to connectProfile for info on user tapped
         async void OnProfileButtonClicked(object sender, EventArgs e)
         {
             var button = sender as Button;

@@ -17,6 +17,7 @@ namespace imPACt
 			InitializeComponent ();
 		}
 
+        //Signing user up for app
 		async void OnSignUpButtonClicked (object sender, EventArgs e)
 		{
 			await Navigation.PushAsync (new SignUpPage ());

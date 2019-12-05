@@ -19,6 +19,7 @@ namespace imPACt
         {
             InitializeComponent();
             
+            //getting photo to display into image source
             pickPhoto.Clicked += async (sender, args) =>
             {
                 if (!CrossMedia.Current.IsPickPhotoSupported)
@@ -52,7 +53,7 @@ namespace imPACt
         }
 
         
-
+        //Create event and add to database then pop back to eventpage
         private async void CreateButton(object sender, EventArgs e)
         {
 
@@ -67,13 +68,14 @@ namespace imPACt
             await Navigation.PopAsync();
         }
 
+        //go back to events
         private async void CancelButton(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new MainPage());
+            await Navigation.PopAsync();
         }
 
 
-
+        //Getting data on click
         private void DatePicker_DateSelected(object sender, DateChangedEventArgs e)
         {
             Event1.EventDate = date.Date;

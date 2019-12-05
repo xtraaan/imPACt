@@ -40,6 +40,7 @@ namespace imPACt
             var users = await App.Database.GetFriendAsync();
             List<Friends> list = new List<Friends>();
 
+            //Not efficient but grabbing all matches from friends and checking user is associated with
             foreach (var ev in users)
             {
                 if (App.currentUser.UserId == ev.userID)
@@ -51,6 +52,7 @@ namespace imPACt
             var match = await App.Database.GetUsersAsync();
             List<RegisterUserTable> matches = new List<RegisterUserTable>();
 
+            //Grab all users and checking to the friendID to see which user is matched with
             foreach (var ev in match)
             {
                 foreach (var fr in list)
@@ -62,11 +64,12 @@ namespace imPACt
                 }
 
             }
-
+            //After info has been acquired then populate into ListView2
             listView2.ItemsSource = matches;
 
         }
 
+        //Gear image button to go into Setting
         private async void ImageButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new SettingsPage());

@@ -23,7 +23,7 @@ namespace imPACt.SignUp
             NewUser = Newuser;
 
 
-
+            //Grabbing the photo and displaying it on Phone
             pickPhoto.Clicked += async (sender, args) =>
             {
                 if (!CrossMedia.Current.IsPickPhotoSupported)
@@ -40,6 +40,7 @@ namespace imPACt.SignUp
                 if (file == null)
                     return;
 
+                //Grabbing photo and adding it to the newUser by converting it into bytes
                 var memoryStream = new MemoryStream();
                 file.GetStream().CopyTo(memoryStream);
                 Newuser.ImageBytes = memoryStream.ToArray();
@@ -57,8 +58,10 @@ namespace imPACt.SignUp
         }
         
 
+        //Logging user in
         public async void Button_Clicked(object sender, EventArgs e)
         {
+            //User did not upload image and if they did save to database and current user then head to main page
             if (NewUser.ImageBytes != null) {
                 await App.Database.SaveUserAsync(NewUser);
                 App.currentUser = await App.Database.GetUserAsync(NewUser.UserId);

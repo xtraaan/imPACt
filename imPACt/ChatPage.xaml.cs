@@ -12,6 +12,12 @@ namespace imPACt
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ChatPage : ContentPage
     {
+
+        /*
+         * 
+         * Nothing done to this page, page is empty 
+         * 
+         */
         public ChatPage()
         {
             InitializeComponent();

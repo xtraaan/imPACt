@@ -22,6 +22,7 @@ namespace imPACt.Matching
 
         protected override void OnAppearing()
         {
+            //Once appearing fill in Labels needed
             base.OnAppearing();
             name.Text = " " + ClickedUser.FullName;
             researchInterests.Text = " " + ClickedUser.ResearchInterest;
@@ -35,6 +36,7 @@ namespace imPACt.Matching
         // Needs to be fixed, populate list in Matches
         async void OnConnectClicked(object sender, EventArgs e)
         {
+            //storing matched users in friend database table not efficient way of doing it
             friend.userID = App.currentUser.UserId;
             friend.FriendID = ClickedUser.UserId;
 

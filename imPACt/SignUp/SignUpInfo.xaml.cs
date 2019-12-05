@@ -20,7 +20,7 @@ namespace imPACt.Login
     {
 
 
-        // private SQLiteAsyncConnection _connection;
+        // temp user to pass in field
         public RegisterUserTable NewUser;
 
         public SignUpInfo(RegisterUserTable Newuser)

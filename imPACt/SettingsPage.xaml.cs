@@ -12,6 +12,7 @@ namespace imPACt
         {
             InitializeComponent();
 
+            //adding them to list for pickers
             foreach (var method in GetMajorMethod())
                 Major.Items.Add(method.MajorSel);
             foreach (var method in GetResearchMethod())
@@ -46,6 +47,12 @@ namespace imPACt
 
         private async void ToolbarItem_Activated(object sender, EventArgs e)
         {
+
+            /*
+             * 
+             * Go through each one to check if field has been changed and if it has save to current user
+             * 
+             * */
             if(!string.IsNullOrWhiteSpace(FirstnameEntry.Text))
                 App.currentUser.FirstName = FirstnameEntry.Text;
 
@@ -61,8 +68,10 @@ namespace imPACt
             if (!string.IsNullOrWhiteSpace(RsrchInt))
                 App.currentUser.ResearchInterest = RsrchInt;
 
+            //Update current users database
             await App.Database.UpdateUser();
 
+            //Display it has been saved
             await DisplayAlert("Saved", "Settings Saved", "Ok");
 
         }
