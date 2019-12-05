@@ -23,7 +23,7 @@ namespace imPACt
             //Remove current user from list
             var users = await App.Database.GetEventAsync();
             List<Events> list = new List<Events>();
-
+            //Populating event list to display
             foreach (var ev in users)
             {
                 if (ev != null)
@@ -31,31 +31,20 @@ namespace imPACt
                    list.Add(ev);
                 }
              }
-            
+            //As long as event view is not empty then populate listView
             if (list.Count() != 0)
                 listView.ItemsSource = list;
             else
                 await DisplayAlert("No Current Events", "Try again later...", "Okay", "Cancel");
         } 
 
-
-
-
-
-
-
-            private async void CreateButton(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new EventsFormPage());
-        }
-
-
-
+        //Adding event button
         private async void ImageButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new EventsFormPage());
         }
 
+        //Clicking Item and sending current event to page
         private async void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             var content = e.Item as Events;
